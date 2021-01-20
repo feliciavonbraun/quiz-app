@@ -11,18 +11,46 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+h1 {
+    font-size: 2.25rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px var(--clr-yellow);
+    margin-block-end: 0;
 }
 
 main {
     flex-direction: column;
+    text-align: center;
+}
+
+#winOrLoseText {
+    font-size: x-large;
 }
 
 button {
+    padding: 1rem 2rem;
+    border-radius: 50rem;
+    border: none;
     background: var(--clr-yellow);
-    border-radius: 1000px;
-    padding: 1rem;
-    border: none;     
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
+    transition: 250ms ease-in-out;
+    cursor: pointer;
 }
+  
+button:hover {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
+    background: var(--clr-orange);
+}
+
+
+/* REUSABLE CLASSES */
 
 .flex {
     display: flex;
