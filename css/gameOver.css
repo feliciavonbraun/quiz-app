@@ -11,20 +11,17 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-
 }
 
 main {
     flex-direction: column;
 }
 
-
 button {
     background: var(--clr-yellow);
     border-radius: 1000px;
     padding: 1rem;
     border: none;     
-
 }
 
 .flex {
