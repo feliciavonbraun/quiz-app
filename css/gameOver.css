@@ -1,0 +1,33 @@
+:root {
+    --clr-dark-purple: #593267;
+    --clr-yellow: #FFAF4F;
+    --clr-orange: #ED733F;
+}
+
+body {
+    background: var(--clr-dark-purple);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    flex-direction: column;
+}
+
+button {
+    background: var(--clr-yellow);
+    border-radius: 1000px;
+    padding: 1rem;
+    border: none;     
+}
+
+.flex {
+    display: flex;
+}
+.center {
+    justify-content: center;
+    align-items: center;
+}
