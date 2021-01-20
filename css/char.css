@@ -1,0 +1,9 @@
+:root {
+    --clr-dark-purple: #593267;
+    --clr-yellow: #FFAF4F;
+    --clr-orange: #ED733F;
+  }
+
+  body{
+      background: #593267;
+  }
