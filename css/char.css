@@ -2,88 +2,71 @@
     --clr-dark-purple: #593267;
     --clr-yellow: #FFAF4F;
     --clr-orange: #ED733F;
-  }
+}
 
-  body {
+body {
     background: var(--clr-dark-purple);
     overflow: hidden;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    display: flex;
+    color: white;
+}
 
+.center {
     text-align: center;
-    align-items: center;
+    
+}
+
+header {
+    text-align: center;
+    font-family: 'Sedgwick Ave Display', cursive;
+}
+.text{
     justify-content: center;
+    display: flex;
+}
+img{
+    height: 7rem;
+    
+}
+.bot{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+.Start{
+    margin: 0 auto;
+    display: flex;
+}
+.bottext{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.btnstart{
+    display: flex;
+    justify-content: center;
+}
+.okbtn{
+    padding: 1rem 6rem;
+  border-radius: 50rem;
+  border: none;
+  background: var(--clr-yellow);
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
+  transition: 250ms ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+.okbtn:hover {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
+    background: var(--clr-orange);
   }
-
-h2 {
-    color: white;
-    font-family: Sedgwick Ave Display;
-    align-items: center;
-    justify-content: center;
-}
-
-h4 {
-    color: white;
-}
-
-.playscreen {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.playfield {
-    display: flex;
-    flex-direction: column;
-}
-
-.player-two {
-    padding-top: 3rem;
-    display: flex;
-    flex-direction: row;
-
-}
-
-.player-one {
-    padding-top: 3rem;
-    display: flex;
-    flex-direction: row;
-}
-
-.character {
-    align-items: horizontal;
-}
-
-.answers {
-    padding-top: 2rem;
-    padding-right: 2rem;
-    text-align: left;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.player-avatar {
-    height: 6rem;
-    width: auto;
-}
-
-.player-answer {
-    color: white
-}
-
-.playfield p {
-    color:white;
-}
-
-.game-answer {
-    color: yellow;
-}
-.btnsub{
+.Startgamebtn{
     padding: 1rem 6rem;
     border-radius: 50rem;
     border: none;
@@ -96,12 +79,12 @@ h4 {
     cursor: pointer;
     outline: none;
 }
-.btnsub:hover {
+.Startgamebtn:hover {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
     background: var(--clr-orange);
   }
   .textinfo{
-    width: 45%;
+    width: 20%;
     padding: 1.5rem 2rem;
     margin: 8px 0;
     display: inline-block;
