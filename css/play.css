@@ -1,0 +1,71 @@
+:root {
+    --clr-dark-purple: #593267;
+    --clr-yellow: #FFAF4F;
+    --clr-orange: #ED733F;
+  }
+
+  body {
+    background: var(--clr-dark-purple);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+h2 {
+    color: white;
+    font-family: Sedgwick Ave Display;
+    align-items: center;
+    justify-content: center;
+}
+
+.playscreen {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.playfield {
+    display: flex;
+    flex-direction: column;
+}
+
+.player-one {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.character {
+    align-items: horizontal;
+}
+
+.answers {
+    padding-top: 2rem;
+    padding-right: 2rem;
+    text-align: left;
+}
+
+.player-avatar {
+    height: 6rem;
+    width: auto;
+}
+
+.player-answer {
+    color: white
+}
+
+.playfield p {
+    color:white;
+}
+
+.game-answer {
+    color: yellow;
+}
