@@ -83,6 +83,24 @@ h4 {
 .game-answer {
     color: yellow;
 }
+
+input{
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    
+}
+button{
+    cursor: pointer;
+    height: 1.2rem;
+    width: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    color: black;
+    background-color:#FFAF4F ;
+}
+=======
 .btnsub{
     padding: 1rem 6rem;
     border-radius: 50rem;
@@ -109,3 +127,4 @@ h4 {
     border-radius: 4px;
     box-sizing: border-box;
   }
+
