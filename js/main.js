@@ -1,8 +1,7 @@
 window.addEventListener('load', main);
 
-
-function main (){
-
-    userChoice();   
-    
-}
+/* Starts all javascript files */
+function main() {
+    gameover();
+    userChoice();
+};
