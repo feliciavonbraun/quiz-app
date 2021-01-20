@@ -1,10 +1,92 @@
-
 :root {
     --clr-dark-purple: #593267;
     --clr-yellow: #FFAF4F;
     --clr-orange: #ED733F;
-  }
+}
 
-  body{
-      background: #593267;
+body {
+    background: var(--clr-dark-purple);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.center {
+    text-align: center;
+    
+}
+
+header {
+    text-align: center;
+    font-family: 'Sedgwick Ave Display', cursive;
+}
+.text{
+    justify-content: center;
+    display: flex;
+}
+img{
+    height: 7rem;
+    
+}
+.bot{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+.Start{
+    margin: 0 auto;
+    display: flex;
+}
+.bottext{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.btnstart{
+    display: flex;
+    justify-content: center;
+}
+.okbtn{
+    padding: 1rem 6rem;
+  border-radius: 50rem;
+  border: none;
+  background: var(--clr-yellow);
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
+  transition: 250ms ease-in-out;
+  cursor: pointer;
+}
+.okbtn:hover {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
+    background: var(--clr-orange);
+  }
+.Startgamebtn{
+    padding: 1rem 6rem;
+    border-radius: 50rem;
+    border: none;
+    background: var(--clr-yellow);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
+    transition: 250ms ease-in-out;
+    cursor: pointer;
+}
+.Startgamebtn:hover {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
+    background: var(--clr-orange);
+  }
+  .textinfo{
+    width: 20%;
+    padding: 1.5rem 2rem;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
   }

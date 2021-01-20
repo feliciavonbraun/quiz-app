@@ -83,3 +83,28 @@ h4 {
 .game-answer {
     color: yellow;
 }
+.btnsub{
+    padding: 1rem 6rem;
+    border-radius: 50rem;
+    border: none;
+    background: var(--clr-yellow);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
+    transition: 250ms ease-in-out;
+    cursor: pointer;
+}
+.btnsub:hover {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
+    background: var(--clr-orange);
+  }
+  .textinfo{
+    width: 45%;
+    padding: 1.5rem 2rem;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
