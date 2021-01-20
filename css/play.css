@@ -94,6 +94,7 @@ h4 {
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
     transition: 250ms ease-in-out;
     cursor: pointer;
+    outline: none;
 }
 .btnsub:hover {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
