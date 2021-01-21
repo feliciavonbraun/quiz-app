@@ -50,7 +50,7 @@ img{
     justify-content: center;
 }
 .okbtn{
-    padding: 1rem 6rem;
+    padding: 1rem 2rem;
   border-radius: 50rem;
   border: none;
   background: var(--clr-yellow);
