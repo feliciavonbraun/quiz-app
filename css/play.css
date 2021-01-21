@@ -84,23 +84,35 @@ h4 {
     color: yellow;
 }
 
-input{
-    width: 5rem;
-    height: 1.5rem;
+.number-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#inputUser{
+    outline: none;
+    padding: 0.5rem;
+    width: 10rem;
+    height: 2rem;
     border-radius: 0.5rem;
     border: none;
+    margin-bottom: 0.5rem;
     
 }
-button{
+.submit{
+    outline: none;
     cursor: pointer;
-    height: 1.2rem;
-    width: 2rem;
-    border-radius: 0.5rem;
+    height: 2rem;
+    width: 10rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
     border: none;
     color: black;
     background-color:#FFAF4F ;
 }
-=======
+
 .btnsub{
     padding: 1rem 6rem;
     border-radius: 50rem;

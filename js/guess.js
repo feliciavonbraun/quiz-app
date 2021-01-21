@@ -17,7 +17,7 @@ function userChoice(){
                 question.innerHTML = `Great! ${userInput}  was the right answer`;    
         
             } else if(userInput < answer){
-                question.innerHTML = `Ouch! ${userInput} is To low.`;     
+                question.innerHTML = `Ouch! ${userInput} is To low.`;   
         
             } else{
                 question.innerHTML = `Sorry! ${userInput} is To high`;
