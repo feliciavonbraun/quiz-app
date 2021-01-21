@@ -37,8 +37,10 @@ h4 {
 }
 
 .playfield {
+    justify-content: center;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    
 }
 
 .player-two {
@@ -66,9 +68,12 @@ h4 {
     padding-top: 2rem;
     padding-right: 2rem;
     text-align: left;
-
+    
     display: flex;
     flex-direction: column;
+}
+.player{
+    margin: 1rem;
 }
 
 .player-avatar {
