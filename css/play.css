@@ -18,9 +18,10 @@
     justify-content: center;
   }
 
-h2 {
+h1 {
+    font-family: 'Sedgwick Ave Display', cursive;
     color: white;
-    font-family: Sedgwick Ave Display;
+  
     align-items: center;
     justify-content: center;
 }
