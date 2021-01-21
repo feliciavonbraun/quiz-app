@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play screen</title>
     <link rel="stylesheet" href="./css/play.css">
+    <script defer src="./js/main.js"></script>
+    <script defer src="./js/guess.js"></script>
 </head>
 <body>
     <div class="playscreen">
         <h2>Playscreen</h2>
 
-        <h4>
-            Lets Play! Guess a number between 1-20
+        <h4 class="question">
+            Guess a number between 1 - 20
         </h4>
 
         <div class="number-input">
-            <form>
-                <input type="text">
-                <input type="submit">
-            </form>
+
+                <input id="inputUser" min='1' max='20' type="number" placeholder="Enter number...">
+                <button class="submit">Submit</button>
         </div>
         <div class="playfield">
             

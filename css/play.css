@@ -83,3 +83,60 @@ h4 {
 .game-answer {
     color: yellow;
 }
+
+.number-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#inputUser{
+    outline: none;
+    padding: 0.5rem;
+    width: 10rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin-bottom: 0.5rem;
+    
+}
+.submit{
+    outline: none;
+    cursor: pointer;
+    height: 2rem;
+    width: 10rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    border: none;
+    color: black;
+    background-color:#FFAF4F ;
+}
+
+.btnsub{
+    padding: 1rem 6rem;
+    border-radius: 50rem;
+    border: none;
+    background: var(--clr-yellow);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
+    transition: 250ms ease-in-out;
+    cursor: pointer;
+    outline: none;
+}
+.btnsub:hover {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
+    background: var(--clr-orange);
+  }
+  .textinfo{
+    width: 45%;
+    padding: 1.5rem 2rem;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
