@@ -18,13 +18,15 @@ h1 {
     font-size: 2.25rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    text-shadow: 2px 2px 0px var(--clr-yellow);
+    /*text-shadow: 2px 2px 0px var(--clr-yellow);*/
     margin-block-end: 0;
+    font-family: 'Sedgwick Ave Display', cursive;
 }
 
 main {
     flex-direction: column;
     text-align: center;
+    
 }
 
 #winOrLoseText {
