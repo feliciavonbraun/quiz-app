@@ -2,7 +2,7 @@ function userChoice(){
 
     //Game Leader
     let question = document.querySelector('.question');
-    let answer = Math.floor(Math.random() * 10) + 1;
+    let answer = Math.floor(Math.random() * 20) + 1;
 
     //Button
     let submit = document.querySelector('.submit');
