@@ -12,9 +12,12 @@ body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     color: white;
+    height: 100vh;
+    width: 100%;
 }
 
 h1 {
+    margin: 4rem;
     font-size: 2.25rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -30,10 +33,33 @@ main {
 }
 
 #winOrLoseText {
-    font-size: x-large;
+    font-size: 2rem;
+    margin: 8rem 0rem 2rem;
+}
+.highscore-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+img{
+    height: 7rem;
+    width: 7rem;
+    margin: 0rem 15rem
+}
+
+.restart-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 button {
+    align-self: center;
+    margin-bottom: 8rem;
     padding: 1rem 2rem;
     border-radius: 50rem;
     border: none;
@@ -49,6 +75,13 @@ button {
 button:hover {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
     background: var(--clr-orange);
+}
+
+.highscore{
+    font-size: 2.5rem;
+}
+.top-list{
+    font-size: 1.5rem;
 }
 
 
