@@ -57,8 +57,9 @@ img{
     justify-content: center;
 }
 .okbtn{
-    height: 3rem;
-    width: 10rem;
+    
+  height: 3rem;
+  width: 10rem;
   border-radius: 20rem;
   border: none;
   background: var(--clr-yellow);

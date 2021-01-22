@@ -10,17 +10,20 @@
     font-family: 'Roboto', sans-serif;
     display: flex;
     text-align: center;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100%;
   }
+  .play-h2{
+      margin-top: 0rem;
+      font-size: 2rem;
+  }
 
 h2 {
     font-family: 'Sedgwick Ave Display', cursive;
     color: white;
-    align-items: center;
-    justify-content: center;
 }
 
 h4 {
@@ -28,7 +31,7 @@ h4 {
 }
 
 .playscreen {
-    text-align: center;
+    
     align-items: center;
     justify-content: center;
 
@@ -71,7 +74,7 @@ h4 {
     flex-direction: column;
 }
 .player{
-    margin: 1rem;
+    margin: 3rem;
 }
 
 .player-avatar {
@@ -80,11 +83,13 @@ h4 {
 }
 
 .player-answer {
+    font-size: 1.5rem;
     color: white
 }
 
 .playfield p {
     color:white;
+    font-size: 1.5rem;
 }
 
 .game-answer {
@@ -99,10 +104,13 @@ h4 {
 }
 
 #inputUser{
-    outline: none;
-    padding: 0.5rem;
     width: 10rem;
-    height: 2rem;
+    padding: 0.7rem;
+    font-size: 1.2rem;
+    margin: 1rem;
+    height: 2.2rem;
+    width: 10rem;
+    outline: none;
     border-radius: 0.5rem;
     border: none;
     margin-bottom: 0.5rem;
@@ -111,17 +119,17 @@ h4 {
 .submit{
     outline: none;
     cursor: pointer;
-    height: 2rem;
-    width: 10rem;
+    height: 3rem;
     font-size: 1.2rem;
-    border-radius: 1rem;
+    margin: 0.5rem;
+    width: 10rem;
+    border-radius: 20rem;
     border: none;
     color: black;
     background-color:#FFAF4F ;
 }
 
 .btnsub{
-    padding: 1rem 6rem;
     border-radius: 50rem;
     border: none;
     background: var(--clr-yellow);
@@ -147,3 +155,6 @@ h4 {
     box-sizing: border-box;
   }
 
+  .question{
+      font-size: 2rem;
+  }
