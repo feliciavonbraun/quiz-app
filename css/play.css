@@ -6,21 +6,19 @@
 
   body {
     background: var(--clr-dark-purple);
-    
-    
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     display: flex;
-
     text-align: center;
     align-items: center;
     justify-content: center;
+    height: 100vh;
+    width: 100%;
   }
 
 h2 {
     font-family: 'Sedgwick Ave Display', cursive;
     color: white;
- 
     align-items: center;
     justify-content: center;
 }
