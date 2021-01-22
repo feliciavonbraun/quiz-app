@@ -11,7 +11,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 
   display: flex;
@@ -34,7 +34,7 @@ body {
 
 .logo {
   width: 15rem;
-  margin-top: 1rem;
+  margin-top: 4rem;
 }
 
 /* h1 {
@@ -47,21 +47,17 @@ body {
 } */
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 3rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   text-shadow: 2px 2px 0px var(--clr-yellow);
-  margin-block-end: 0;
+  margin-top: 6rem;
 }
 
 p {
   line-height: 2rem;
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-}
-
-p b {
-  line-height: 3rem;
+  font-size: 1.4rem;
+  margin: 0rem 0rem 4rem ;
 }
 
 .play-btn {
