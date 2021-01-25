@@ -6,9 +6,8 @@
 
   body {
     background: var(--clr-dark-purple);
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
+    
+    
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     display: flex;
@@ -21,7 +20,12 @@
 h1 {
     font-family: 'Sedgwick Ave Display', cursive;
     color: white;
-  
+    
+}
+h2 {
+    font-family: 'Sedgwick Ave Display', cursive;
+    color: white;
+ 
     align-items: center;
     justify-content: center;
 }
@@ -38,8 +42,10 @@ h4 {
 }
 
 .playfield {
+    justify-content: center;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    
 }
 
 .player-two {
@@ -54,7 +60,11 @@ h4 {
     display: flex;
     flex-direction: row;
 }
-
+.player-three{
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: row;
+}
 .character {
     align-items: horizontal;
 }
@@ -63,9 +73,12 @@ h4 {
     padding-top: 2rem;
     padding-right: 2rem;
     text-align: left;
-
+    
     display: flex;
     flex-direction: column;
+}
+.player{
+    margin: 1rem;
 }
 
 .player-avatar {
