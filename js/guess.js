@@ -1,9 +1,14 @@
-let randomNumber = Math.floor(Math.random() * 20) + 1;
+function rand(){
+
+    let randomNumber = Math.floor(Math.random() * 20) + 1;
+    return randomNumber;
+}
 
 //----------Game Leader (GLOBAL)---------------
 let question = document.querySelector('.question');
 
-let answer = randomNumber;
+let answer = rand();
+console.log(answer);
 
 // number of guesses
 let numberOfGuesses = 0;
@@ -40,35 +45,6 @@ function checkWinner(){
     });
 };
 
-
-//-------Bot-------
-
-
-const botOne = setTimeout(() => {
-    
-    randomNumber
-    console.log(randomNumber);
-    numberOfGuesses = 0;
-    
-}, 2000);
-
-
-const botTwo = setTimeout(() => {
-
-    randomNumber
-    console.log(randomNumber);
-    numberOfGuesses = 0;
-    
-}, 1000);
-
-
-const botThree = setTimeout(() => {
-
-    randomNumber
-    console.log(randomNumber);
-    numberOfGuesses = 0;
-    
-}, 3000);
 
 
 
