@@ -27,7 +27,7 @@ function checkWinner(){
     //-----------User-----------
     let userInput = document.getElementById('inputUser').value;
 
-    if(userInput === answer){
+    if(userInput == answer){
         question.innerHTML = `Great! ${userInput}  was the right answer`; 
         numberOfGuesses++;  
         console.log(`You have guessed ${numberOfGuesses}`); 
