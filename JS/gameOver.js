@@ -25,3 +25,33 @@
 //     }
 
 // }
+
+function presentWinner() {
+
+  let winnerText = document.getElementById('winOrLoseText');
+
+  if (gameIsWon == true) {
+    winnerText.innerHTML = 'Congratulations! You Win!';
+  } else {
+    winnerText.innerHTML = '${botName} is the winner!';
+  }
+
+}
+
+function restartGame() {
+  let restartButton = document.getElementById('restartBtn');
+
+  restartButton.addEventListener('click', () => {
+    //skicka till index.html
+    //kanske byta knapp till <a> med href till index.html
+  });
+}
+
+//TODO:
+
+//gameIsWon variabel
+//funktion för att se vems tur det är
+//Fungerande restart-button
+//spara vinnande bots namn i variabel
+//statistik av botar (localstorage)
+//ranking av botar (localstorage)

@@ -13,15 +13,18 @@ function userChoice(){
        //user guess
     let userInput = document.getElementById('inputUser').value;
 
-            if(userInput == answer){
-                question.innerHTML = `Great! ${userInput}  was the right answer`;    
-        
-            } else if(userInput < answer){
-                question.innerHTML = `Ouch! ${userInput} is To low.`;   
-        
-            } else{
-                question.innerHTML = `Sorry! ${userInput} is To high`;
-            }
+        if(userInput == answer){
+            question.innerHTML = `Great! ${userInput}  was the right answer`;
+            // kollar vem som vann, länkas med game over screen;
+            gameIsWon = true;    
+    
+        } else if(userInput < answer){
+            question.innerHTML = `Ouch! ${userInput} is To low.`;   
+    
+        } else{
+            question.innerHTML = `Sorry! ${userInput} is To high`;
+        }
     });
 
 }
+
