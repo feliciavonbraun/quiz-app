@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Screen</title>
     <link rel="stylesheet" href="./css/char.css">
+    <script src="JS/character.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,8 +14,23 @@
     </header>
     <main>
         <div class="center">
-            <h2>ENTER YOUR NAME:</h2>
-            <input type="text" class="textinfo">  <input type="submit"class="okbtn"value="Ok" >
+            
+            <div id="logInDiv">
+                <h2>ENTER YOUR NAME:</h2>
+                <!-- <input type="text" class="textinfo">   -->
+    
+                <input id="username" type="text" placeholder="Username" value="" required/>
+                <input id="pw" type="password" placeholder="Password" value="" required/>
+                <input id="logInBtn" type="submit" value="Login"/> 
+                <!-- onClick="storeInputs()" -->
+                
+                <!-- <input type="submit" class="okbtn" value="Ok" > -->
+            </div>
+            <div id="welcomeDiv">
+                <h2> Welcome </h2>
+                <h2 id="welcomePhrase"> XXXXX </h2>
+            </div>
+
         </div>
         <div class="text">
             <h2>Get to know your opponents</h2>
