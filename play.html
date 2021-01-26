@@ -15,7 +15,7 @@
     <script defer src="./JS/bots.js"></script>
     
 </head>
-<body>
+<body onload="main()">
     <div class="playscreen">
         <h1>Playscreen</h1>
 
@@ -32,7 +32,7 @@
             <div class="player">
             <div class="player-one player">
                 <div class="answers">
-                <span class="player-answer">Player 1: 2</span>
+                <span class="player-answer">Player 1: <span id="bot1Answer"></span></span>
                 <span class="game-answer">Spelledare: higher!</span>
                 </div>
 
@@ -46,7 +46,7 @@
             <div class="player">
             <div class="player-two player">
                 <div class="answers">
-                <span class="player-answer">Player 1: 2</span>
+                <span class="player-answer">Player 2: <span id="bot2Answer"></span></span>
                 <span class="game-answer">Spelledare: higher!</span>
                 </div>
 
@@ -59,7 +59,7 @@
             <div class="player">
                 <div class="player-three player">
                     <div class="answers">
-                    <span class="player-answer">Player 1: 2</span>
+                    <span class="player-answer">Player 3: <span id="bot3Answer"></span></span>
                     <span class="game-answer">Spelledare: higher!</span>
                     </div>
     
