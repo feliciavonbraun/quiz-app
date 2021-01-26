@@ -1,24 +1,14 @@
-
-let userGuess;
-let gameLeaderText;
-let numberOfGuesses;
-let answer;
-let button;
-
+let userInput;
+let gameLeader;
 
 class CheckWin {
 
-    constructor(gameLeaderText, answer, number, button){
-
-        this.gameLeaderText = document.querySelector('.question');
-        this.answer = Math.floor(Math.random() * 20) + 1;
-        this.numberOfGuesses = 0;
-        this.button = document.querySelector('submit')
-    }
+        userInput = document.getElementById('inputUser');
+        gameLeader = document.querySelector('.question');
 
     checkWinner(){
 
-            userGuess = document.getElementById('inputUser').value;
+            userGuess = Number(userInput)
 
             if(userGuess === answer){
                 question.innerHTML = `Great! ${userGuess}  was the right answer`; 
@@ -38,6 +28,6 @@ class CheckWin {
         }
 }
 
-const winOrLose = new CheckWin;
 
-console.log(winOrLose);
+const whoWon = new CheckWin();
+console.log(CheckWin.checkWinner);
