@@ -1,18 +1,24 @@
 
-//-------Bot-------
+
 let firstAnswer;
 let secondAnswer;
 let thirdAnswer;
-let answerMM = Math.floor(Math.random() * 20) + 1;
+let answerMM = Math.floor(Math.random(20, 1) + 1;
 let numberOfGuesses = 0;
 
+function rand(){
+    let randNum = Math.floor(Math.random() * 20) + 1;
+    return randNum;
+}
 
+
+console.log(answerMM);
+
+//-------Bot-------
 const botOne = setTimeout(() => {
-
-    console.log(answerMM);
     
     function bot1answer(){
-         firstAnswer = Math.floor(Math.random() * 20) + 1;
+         firstAnswer = rand();
          document.getElementById("bot1Answer").innerHTML = firstAnswer;
          return firstAnswer;
      }
@@ -32,12 +38,13 @@ const botTwo = setTimeout(() => {
         }
         else if(answerMM < firstAnswer){
             console.log('lower');
-            secondAnswer = Math.floor(Math.random() * answerMM - (firstAnswer)) + 1;
+            secondAnswer = Math.min(rand() - firstAnswer);
             document.getElementById("bot2Answer").innerHTML = secondAnswer;
             return secondAnswer;
         } else {
             console.log('higher');
-            secondAnswer = Math.floor(Math.random() * answerMM + (firstAnswer)) + 1;
+            randNum = rand();
+            secondAnswer = Math.max(rand() + firstAnswer);
             document.getElementById("bot2Answer").innerHTML = secondAnswer;
             return secondAnswer;
         }
@@ -58,12 +65,12 @@ const botThree = setTimeout(() => {
         }
         else if(answerMM < secondAnswer){
             console.log('lower');
-            thirdAnswer = Math.floor(Math.random() * answerMM - (secondAnswer)) + 1;
+            thirdAnswer = Math.max(rand() - secondAnswer);
             document.getElementById("bot3Answer").innerHTML = thirdAnswer;
             return thirdAnswer;
         } else {
             console.log('higher');
-            thirdAnswer = Math.floor(Math.random() * answerMM + (secondAnswer)) + 1;
+            thirdAnswer = Math.min(rand() + secondAnswer);
             document.getElementById("bot3Answer").innerHTML = thirdAnswer;
             return thirdAnswer;
         }
@@ -73,3 +80,35 @@ const botThree = setTimeout(() => {
     numberOfGuesses++;
     
 }, 5000);
+
+
+const user = () => {
+
+    function userGuess(){
+
+        let submit = document.querySelector('.submit');
+        //when submitting the answer
+        submit.addEventListener('click', () => {
+    
+        //-----------User-----------
+        let userInput = document.getElementById('inputUser').value;
+
+        if(answerMM == thirdAnswer){
+            console.log('bot2 won');
+        }
+        else if(answerMM < thirdAnswer){
+            console.log('lower');
+            return thirdAnswer;
+        } else {
+            console.log('higher');
+            return thirdAnswer;
+        }
+
+    });
+
+    
+  }
+    console.log(userInput);
+    console.log(userGuess());
+    
+};
