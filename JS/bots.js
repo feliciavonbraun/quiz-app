@@ -1,14 +1,36 @@
+// Spelledare
+
+function playMaster(botOne, botTwo) {
+
+let correctNumber = Math.floor(Math.random() * 20) + 1;
+
+console.log(correctNumber);
+
+bot1answer();
+return correctNumber;
+}
+
 
 //-------Bot-------
 
 const botOne = setTimeout(() => {
 
-    function bot1answer(){
+    function bot1answer(correctNumber){
 
         let firstAnswer = Math.floor(Math.random() * 20) + 1;
          document.getElementById("bot1Answer").innerHTML = firstAnswer;
-         return firstAnswer;
+         
+         if (firstAnswer == correctNumber) {
+             console.log('winner winner chicken dinner')
+            }
+            
+            if (firstAnswer > correctNumber) {
+                console.log('lower!')
+            }
+            return firstAnswer;
      }
+
+
     
     console.log(bot1answer());
     numberOfGuesses = 0;
@@ -18,7 +40,7 @@ const botOne = setTimeout(() => {
 
 const botTwo = setTimeout(() => {
 
-    function bot2answer(){
+    function bot2answer(firstAnswer){
 
         let secondAnswer = Math.floor(Math.random() * 20) + 1;
          document.getElementById("bot2Answer").innerHTML = secondAnswer;
