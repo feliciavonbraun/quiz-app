@@ -4,9 +4,12 @@ let firstAnswer;
 let secondAnswer;
 let thirdAnswer;
 let answerMM = Math.floor(Math.random() * 20) + 1;
+let numberOfGuesses = 0;
 
 
 const botOne = setTimeout(() => {
+
+    console.log(answerMM);
     
     function bot1answer(){
          firstAnswer = Math.floor(Math.random() * 20) + 1;
@@ -70,4 +73,3 @@ const botThree = setTimeout(() => {
     numberOfGuesses++;
     
 }, 5000);
-
