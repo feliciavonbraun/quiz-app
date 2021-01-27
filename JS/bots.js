@@ -3,12 +3,8 @@
 let firstAnswer;
 let secondAnswer;
 let thirdAnswer;
-let answerMM = 12;
+let answerMM = Math.floor(Math.random() * 20) + 1;
 
-
-// const botList = ['botOne', 'botTwo', 'botThree'];
-
-// for(let i = 0; i < botList.length; i++){
 
 const botOne = setTimeout(() => {
     
@@ -29,7 +25,7 @@ const botTwo = setTimeout(() => {
     function bot2answer(){
 
         if(answerMM == firstAnswer) {
-            console.log('bot1 won')
+            console.log('bot1 won');
         }
         else if(answerMM < firstAnswer){
             console.log('lower');
@@ -75,4 +71,3 @@ const botThree = setTimeout(() => {
     
 }, 5000);
 
-// };
