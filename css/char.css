@@ -6,7 +6,6 @@
 
 body {
     background: var(--clr-dark-purple);
-   /* overflow: hidden; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,69 +13,58 @@ body {
     color: white;
 }
 
-.center {
-    text-align: center;
-    
-}
-
 header {
-    text-align: center;
     font-family: 'Sedgwick Ave Display', cursive;
 }
+
 .text{
     justify-content: center;
-    display: flex;
     margin: 2rem;
 }
+
+img{
+    height: 7rem;  
+}
+
+.Start{
+    margin: 0 auto;
+    display: flex;
+}
+
+/* .bot{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+} */
+/* .bottext{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+} */
+
+
+/*#region - Register and Signup */
 .enterName-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-img{
-    height: 7rem;
-    
+
+.inputFields {
+    width: 15%;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    box-sizing: border-box;
 }
-.bot{
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-}
-.Start{
-    margin: 0 auto;
-    display: flex;
-}
-.bottext{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-}
-.btnstart{
-    display: flex;
-    justify-content: center;
-}
-.okbtn{
+
+.submitBtn{
     width: 12rem;
-    padding: 0.5rem;
-  border-radius: 50rem;
-  border: none;
-  background: var(--clr-yellow);
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
-  transition: 250ms ease-in-out;
-  cursor: pointer;
-  outline: none;
-}
-.okbtn:hover {
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
-    background: var(--clr-orange);
-  }
-.Startgamebtn{
-    margin-top: 3rem;
-    padding: 1rem 6rem;
+    padding: 1rem;
     border-radius: 50rem;
     border: none;
     background: var(--clr-yellow);
@@ -88,31 +76,21 @@ img{
     cursor: pointer;
     outline: none;
 }
-.Startgamebtn:hover {
+.submitBtn:hover {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
     background: var(--clr-orange);
-  }
-  .textinfo{
-    font-size: 1.2rem;
-    width: 20%;
-    padding: 1rem 2rem;
-    margin: 1rem 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 2rem;
-    box-sizing: border-box;
-  }
+}
+/*#endregion */
 
+/*#region - Botarea */
 .bot-choices {
     margin: 4rem 0rem 1rem;
     align-items: center;
     justify-content: space-around;
-    display: flex;
     flex-wrap: wrap;
 }
 
 .bot-card {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -137,4 +115,36 @@ img{
 .chooseOpponentButton:hover {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
     background: var(--clr-orange);
+}
+/*#endregion */
+
+.btnstart{
+    justify-content: center;
+}
+.Startgamebtn{
+    margin-top: 3rem;
+    padding: 1rem 6rem;
+    border-radius: 50rem;
+    border: none;
+    background: var(--clr-yellow);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
+    transition: 250ms ease-in-out;
+    cursor: pointer;
+    outline: none;
+}
+
+.Startgamebtn:hover {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
+    background: var(--clr-orange);
+}
+
+/* REUSABLE CLASSES */
+.flex {
+    display: flex;
+}
+.textCenter {
+    text-align: center;
 }

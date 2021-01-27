@@ -11,14 +11,14 @@ function characterPage() {
 function defaultPage() {
     document.getElementById("welcomeDiv").style.display = 'none';
     
-    if (localStorage.length > 0){
+    if (localStorage.getItem('username')) {
         //Items are stored in local storage
         document.getElementById("registerDiv").style.display = 'none';
         document.getElementById("signInDiv").style.display = 'unset';        
-    } else if (localStorage.length < 0) {
+    } else {
         //Local storage is empty
         document.getElementById("registerDiv").style.display = 'unset';
-        document.getElementById("signInDiv").style.display = 'none';
+        document.getElementById("signInDiv").style.display = 'unset';
     }
 }
 
