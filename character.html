@@ -15,25 +15,32 @@
     <main>
         <div class="center">
             
-            <div id="logInDiv">
-                <h2>ENTER YOUR NAME:</h2>
-                <!-- <input type="text" class="textinfo">   -->
-    
-                <input id="username" type="text" placeholder="Username" value="" required/>
-                <input id="pw" type="password" placeholder="Password" value="" required/>
-                <input id="logInBtn" type="submit" value="Login"/> 
+            <button id="removeBtn">REMOVE LS</button>
+            <div id="registerDiv">
+                <h2>REGISTER:</h2>
+                <input id="createUsername" type="text" placeholder="Pick Username" value="" required/>
+                <input id="createPw" type="password" placeholder="Pick Password" value="" required/>
+                <input id="registerBtn" type="submit" value="Register"/> 
                 <!-- onClick="storeInputs()" -->
                 
+                <!-- <input type="text" class="textinfo">   -->
                 <!-- <input type="submit" class="okbtn" value="Ok" > -->
+            </div>
+            <div id="signInDiv">
+                <h2>SIGN IN:</h2>
+                <input id="username" type="text" placeholder="Username" value="" required/>
+                <input id="pw" type="password" placeholder="Password" value="" required/>
+                <input id="signInBtn" type="submit" value="Sign in"/> 
+
             </div>
             <div id="welcomeDiv">
                 <h2> Welcome </h2>
                 <h2 id="welcomePhrase"> XXXXX </h2>
             </div>
 
-            <div class="enterName-container"><input placeholder="Enter your name..." type="text" class="textinfo">
+            <!-- <div class="enterName-container"><input placeholder="Enter your name..." type="text" class="textinfo">
                 <button type="submit"class="okbtn"value="Ok">Add</button>
-            </div>
+            </div> -->
             
 
         </div>
