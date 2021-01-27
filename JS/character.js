@@ -4,61 +4,81 @@ window.addEventListener('load', characterPage) // DENNA SKA IN I MAIN SEN
 function characterPage() {
     defaultPage();
     addEventListeners();
-    // kollar();
 }
 
-// BESTÄMMER VAD SOM VISAS PÅ FÖRSTASIDAN
+// DENNA FUNGERAR INTE
+// Shows registerDiv or signInDiv depending on local storage
 function defaultPage() {
-    document.getElementById("logInDiv").style.display = 'unset';
     document.getElementById("welcomeDiv").style.display = 'none';
+    
+    if (localStorage.length > 0){
+        //Items are stored in local storage
+        document.getElementById("registerDiv").style.display = 'none';
+        document.getElementById("signInDiv").style.display = 'unset';        
+    } else if (localStorage.length < 0) {
+        //Local storage is empty
+        document.getElementById("registerDiv").style.display = 'unset';
+        document.getElementById("signInDiv").style.display = 'none';
+    }
 }
 
 function addEventListeners() {
-    const logInBtn = document.getElementById('logInBtn').addEventListener('click', storeInputs,);    
+    const registerBtn = document.getElementById('registerBtn').addEventListener('click', registerStorage);    
+    const signInBtn = document.getElementById('signInBtn').addEventListener('click', signInStorage);    
+    const removeBtn = document.getElementById('removeBtn').addEventListener('click', removeLS);    
 }
 
-// Stores AND Retrieves AND hides
-function storeInputs() {
-
-    // Hides and shows pages if logInBtn is pressed
-    document.getElementById('logInDiv').style.display = 'none'; 
-    document.getElementById('welcomeDiv').style.display = 'unset'; 
-
+// Register user and saves in local storage
+function registerStorage() {
+    
     // Gets elements from HTML
+    var createUsername = document.getElementById('createUsername');
+    var createPw = document.getElementById('createPw');
+    
+    // Asks user to create username and password 
+    if (createUsername.value.length == 0 && createPw.value.length == 0){
+        alert('Please fill in email and password');
+    } else {
+        // Stores
+        localStorage.setItem('createUsername', createUsername.value);
+        localStorage.setItem('createPw', createPw.value);
+        alert('acc created');
+        
+        // Hides and shows pages if registerBtn is pressed
+        // document.getElementById('registerDiv').style.display = 'none'; 
+        // document.getElementById('signInDiv').style.display = 'none'; 
+        document.getElementById('welcomeDiv').style.display = 'unset'; 
+    }
+
+    // Retrieves
+    document.getElementById("welcomePhrase").innerHTML = localStorage.getItem("createUsername");
+}
+
+// Checks if username and pw is matching with local storage
+function signInStorage() {
+    var createUsername = localStorage.getItem('createUsername');
+    var createPw = localStorage.getItem('createPw');
+    
     var username = document.getElementById('username');
     var pw = document.getElementById('pw');
     
-    // Stores
-    localStorage.setItem('username', username.value);
-    localStorage.setItem('pw', pw.value);
+    if (username.value == createUsername && pw.value == createPw) {
+        alert('You are logged in.');
+        // document.getElementById('registerDiv').style.display = 'none'; 
+        // document.getElementById('signInDiv').style.display = 'none'; 
+        document.getElementById('welcomeDiv').style.display = 'unset';  
+    } else {
+        alert('Error on login');
+    }
     
     // Retrieves
-    document.getElementById("welcomePhrase").innerHTML = localStorage.getItem("username");
-    
+    document.getElementById("welcomePhrase").innerHTML = localStorage.getItem("createUsername");
 }
 
-
-// den måste skickas till denna funktionen någonstans????
-// function kollar() {
-
-//      // stored data from the register-form
-//      var storedName = localStorage.getItem('username');
-//      var storedPw = localStorage.getItem('pw');
- 
-//      // entered data from the login-form
-//      var userName = document.getElementById('userYooo');
-//      var userPw = document.getElementById('userPwyooo');
-
-//     if(userYooo.value == storedName && userPwyooo.value == storedPw) {
-//         alert('You are logged in.');
-//     } else {
-//         alert('ERROR.');
-//     }
-// }
-
-
-
-// Store
-// localStorage.setItem("lastname", "Smith");
-// Retrieve
-// document.getElementById("presentera på någon annan skärm??").innerHTML = localStorage.getItem("lastname");
+// TILLFÄLLIG 
+function removeLS() {
+    localStorage.removeItem('createUsername');
+    localStorage.removeItem('createPw');
+    localStorage.removeItem('username');
+    localStorage.removeItem('pw');
+}
