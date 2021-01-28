@@ -1,5 +1,5 @@
 
-
+//--------Global variables--------
 let firstAnswer;
 let secondAnswer;
 let thirdAnswer;
@@ -17,15 +17,25 @@ function rand(){
 
 console.log('Answer:' + answerMM);
 
+
 //-------Bot 1-------
-const botOne = setTimeout(() => {
-    
+function botOne() { setTimeout(() => {
+
+    setTimeout(()=> {
+        gameLeader.innerHTML = 'Bot 1 turn'
+    }, 2000)
+
          firstAnswer = rand();
          document.getElementById("bot1Answer").innerHTML = firstAnswer;
          console.log(firstAnswer);
          checkingFirstGuess();   
     
 }, 2000);
+
+
+}
+
+botOne();
 
 
 //--------User---------
@@ -38,17 +48,23 @@ function checkingFirstGuess() {
     else if(answerMM < firstAnswer){
         gameLeader.innerHTML = 'Lower...'
         console.log('lower');
-        userGuess();
+        setTimeout(()=> {
+            userGuess();
+        }, 2000)
         
     } else {
         gameLeader.innerHTML = 'Higher...'
         console.log('higher');
-        userGuess();
+        setTimeout(()=> {
+            userGuess();
+        }, 2000)
     }
 }
 
 //-------Users guess------
 function userGuess(){
+
+    gameLeader.innerHTML = 'Your turn!'
 
     let submit = document.querySelector('.submit');
     //when submitting the answer
@@ -82,12 +98,18 @@ function checkingUserAnswer() {
     if(answerMM < userInput){
         gameLeader.innerHTML = 'Lower...'
         console.log('lower');
-        botTwo();
+        setTimeout(()=> {
+            gameLeader.innerHTML = 'Bot 2 turn';
+            botTwo();
+        }, 2000)
 
     } else {
         gameLeader.innerHTML = 'Higher...'
         console.log('higher');
-        botTwo();
+        setTimeout(()=> {
+            gameLeader.innerHTML = 'Bot 2 turn';
+            botTwo();
+        }, 2000)
        
     }
 
@@ -96,6 +118,7 @@ function checkingUserAnswer() {
 //------Bot 2------
 function botTwo() { setTimeout(() => {
 
+    gameLeader.innerHTML = 'Bot 2 turn';
 
     if(answerMM < userInput){
         newInBetween = 20 - userInput;
@@ -128,17 +151,26 @@ function checkingBotTwoGuess(){
     }else if(answerMM < secondAnswer){
         gameLeader.innerHTML = 'Lower...'
         console.log('lower');
-        botThree()
+        setTimeout(()=> {
+            gameLeader.innerHTML = 'Bot 3 turn';
+            botThree();
+        }, 2000)
+        
 
     } else {
         gameLeader.innerHTML = 'Higher...'
         console.log('higher');
-        botThree();
+        setTimeout(()=> {
+            gameLeader.innerHTML = 'Bot 3 turn';
+            botThree();
+        }, 2000)
     }
 }
 
 //-------Bot 3 Guess
 function botThree() { setTimeout(() => {
+
+    gameLeader.innerHTML = 'Bot 3 Turn'
 
 
     if(answerMM < secondAnswer){
@@ -157,7 +189,7 @@ function botThree() { setTimeout(() => {
 }, 5000);
 
 }
-
+//----Checking Bot 3 guess-----
 function checkingBotThreeGuess(){
 
     console.log(thirdAnswer);
@@ -169,10 +201,19 @@ function checkingBotThreeGuess(){
     else if(answerMM < thirdAnswer){
         gameLeader.innerHTML = 'Lower...'
         console.log('lower');
+        setTimeout(()=> {
+            gameLeader.innerHTML = 'Bot 1 turn';
+            botOne();
+        }, 2000)
+
 
     } else {
         gameLeader.innerHTML = 'Higher'
         console.log('higher');
+        setTimeout(()=> {
+            gameLeader.innerHTML = 'Bot 1 turn';
+            botOne();
+        }, 2000)
     }
  }
 
