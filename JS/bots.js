@@ -3,7 +3,7 @@
 let firstAnswer;
 let secondAnswer;
 let thirdAnswer;
-let answerMM = Math.floor(Math.random(20, 1) + 1;
+let answerMM = Math.floor(Math.random() * 20) + 1;
 let numberOfGuesses = 0;
 
 function rand(){
@@ -38,13 +38,13 @@ const botTwo = setTimeout(() => {
         }
         else if(answerMM < firstAnswer){
             console.log('lower');
-            secondAnswer = Math.min(rand() - firstAnswer);
+            newInBetween = 20 - firstAnswer;
+            secondAnswer = Math.floor(Math.random() * newInBetween) + 1;
             document.getElementById("bot2Answer").innerHTML = secondAnswer;
             return secondAnswer;
         } else {
             console.log('higher');
-            randNum = rand();
-            secondAnswer = Math.max(rand() + firstAnswer);
+            secondAnswer = rand() + firstAnswer;
             document.getElementById("bot2Answer").innerHTML = secondAnswer;
             return secondAnswer;
         }
@@ -65,7 +65,8 @@ const botThree = setTimeout(() => {
         }
         else if(answerMM < secondAnswer){
             console.log('lower');
-            thirdAnswer = Math.max(rand() - secondAnswer);
+            newInBetween = 20 - secondAnswer;
+            thirdAnswer = Math.floor(Math.random() * newInBetween) + 1;
             document.getElementById("bot3Answer").innerHTML = thirdAnswer;
             return thirdAnswer;
         } else {
