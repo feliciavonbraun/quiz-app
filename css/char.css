@@ -42,46 +42,6 @@ img{
     flex-direction: row;
 } */
 
-
-/*#region - Register and Signup */
-.enterName-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.inputFields {
-    width: 15%;
-    padding: 1rem;
-    margin: 1rem 0;
-    font-size: 1rem;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 2rem;
-    box-sizing: border-box;
-}
-
-.submitBtn{
-    width: 12rem;
-    padding: 1rem;
-    border-radius: 50rem;
-    border: none;
-    background: var(--clr-yellow);
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
-    transition: 250ms ease-in-out;
-    cursor: pointer;
-    outline: none;
-}
-.submitBtn:hover {
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
-    background: var(--clr-orange);
-}
-/*#endregion */
-
 /*#region - Botarea */
 .bot-choices {
     margin: 4rem 0rem 1rem;

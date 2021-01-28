@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Screen</title>
     <link rel="stylesheet" href="./css/char.css">
-    <script src="JS/character.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,35 +12,6 @@
         <h1>Character Screen</h1>
     </header>
     <main>
-        <div class="textCenter">
-            
-            <button id="removeBtn">REMOVE LS</button>
-            <div id="registerDiv">
-                <h2>REGISTER:</h2>
-                <input id="createUsername" class="inputFields" type="text" placeholder="Pick Username" value="" required/>
-                <input id="createPw" class="inputFields" type="password" placeholder="Pick Password" value="" required/>
-                <input id="registerBtn" class="submitBtn" type="submit" value="Register"/>  
-            </div>
-
-            <div id="signInDiv">
-                <h2>SIGN IN:</h2>
-                <input id="username" class="inputFields" type="text" placeholder="Username" value="" required/>
-                <input id="pw" class="inputFields" type="password" placeholder="Password" value="" required/>
-                <input id="signInBtn" class="submitBtn" type="submit" value="Sign in"/> 
-            </div>
-
-            <div id="welcomeDiv">
-                <h2> Welcome </h2>
-                <h2 id="welcomePhrase"> XXXXX </h2>
-            </div>
-            
-            <!-- <div class="enterName-container">
-                <input class="textinfo" placeholder="Enter your name..." type="text" >
-                <button class="okbtn" type="submit" value="Ok">Add</button>
-            </div> -->
-            
-        </div>
-        
         <div class="flex text">
             <h2>Get to know your opponents</h2>
         </div>
@@ -77,6 +47,7 @@
                 <h3>Dicy dyed die</h3>
                 
                 <p>Dicy dyed die is known for its randomness. It will always be unpredictable and loves to play yatzy.</p>
+                
                 <div class="choose-opponent-btn">
                     <input type="submit" class="chooseOpponentButton" id="chooseOpponentBtn" value="Add opponent">
                 </div>
