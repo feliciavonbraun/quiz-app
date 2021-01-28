@@ -123,14 +123,20 @@ function botTwo() { setTimeout(() => {
     if(answerMM < userInput){
         newInBetween = 20 - userInput;
         secondAnswer = Math.floor(Math.random() * newInBetween) + 1;
-        document.getElementById("bot2Answer").innerHTML = secondAnswer;
-        checkingBotTwoGuess();
+
+        if(secondAnswer != firstAnswer || userInput || thirdAnswer){
+            document.getElementById("bot2Answer").innerHTML = secondAnswer;
+            checkingBotTwoGuess();
+        }
 
     } else {
         newInBetween = 20 - userInput;
         secondAnswer = Math.floor(Math.random() * (20 - newInBetween) + newInBetween);
-        document.getElementById("bot2Answer").innerHTML = secondAnswer;
-        checkingBotTwoGuess();
+
+        if(secondAnswer != firstAnswer || userInput || thirdAnswer){
+            document.getElementById("bot2Answer").innerHTML = secondAnswer;
+            checkingBotTwoGuess();
+        }
     }
      
     
@@ -176,14 +182,20 @@ function botThree() { setTimeout(() => {
     if(answerMM < secondAnswer){
         newInBetween = 20 - secondAnswer;
         thirdAnswer = Math.floor(Math.random() * newInBetween) + 1;
-        document.getElementById("bot3Answer").innerHTML = thirdAnswer;
-        checkingBotThreeGuess();
 
+        if(thirdAnswer != firstAnswer || userInput || secondAnswer){
+            document.getElementById("bot3Answer").innerHTML = thirdAnswer;
+            checkingBotThreeGuess();
+        }
+        
     } else {
         newInBetween = 20 - secondAnswer;
         thirdAnswer = Math.floor(Math.random() * (20 - newInBetween) + newInBetween);
-        document.getElementById("bot3Answer").innerHTML = thirdAnswer;
-        checkingBotThreeGuess();
+
+        if(thirdAnswer != firstAnswer || userInput || secondAnswer){
+            document.getElementById("bot3Answer").innerHTML = thirdAnswer;
+            checkingBotThreeGuess();
+        }
     }
     
 }, 5000);
@@ -217,3 +229,23 @@ function checkingBotThreeGuess(){
     }
  }
 
+//  function botOne(){
+//     if(answerMM < thirdAnswer){
+//         newInBetween = 20 - thirdAnswer;
+//         firstAnswer = Math.floor(Math.random() * newInBetween) + 1;
+
+//              if(firstAnswer != secondAnswer || userInput || thirdAnswer){
+//                 document.getElementById("bot3Answer").innerHTML = firstAnswer;
+//                  checkingFirstGuess();
+//              }       
+//        
+//     } else {
+//         newInBetween = 20 - thirdAnswer;
+//         firstAnswer = Math.floor(Math.random() * (20 - newInBetween) + newInBetween);
+//         
+//            if(firstAnswer != secondAnswer || userInput || thirdAnswer){
+//                 document.getElementById("bot3Answer").innerHTML = firstAnswer;
+//                  checkingFirstGuess();
+//              } 
+//     }
+//  }
