@@ -1,5 +1,10 @@
-// answer = Math.floor(Math.random() * 20) + 1;
-// question = document.querySelector('h3');
+answer = Math.floor(Math.random() * 20) + 1;
+newAnswer = 
+question = document.querySelector('.question');
+submitBtn = document.querySelector('.submit');
+
+// let answerMM = Math.floor(Math.random() * 20) + 1;
+
 console.log('CORRECT ANSWER IS: ' + answer);
 
 botOneTurn();
@@ -25,28 +30,35 @@ function botOneTurn() {
         console.log(`Sorry Bot 1! That is too high`); 
         userTurn();
     }
+    return botOneGuess;
   }, 2000);
 }
 
 function userTurn() {
+
+  console.log('USER, it is your turn')
   
-  let userGuess = document.getElementById('inputUser').value;
+  submitBtn.addEventListener('click', () => {
 
-  if(userGuess == answer){
-      question.innerHTML = `User is the winner`;  
-      console.log(`User is the winner`); 
-      //spelet stoppas, skickas till Game Over screen
+    let userGuess = document.getElementById('inputUser').value;
 
-  } else if (userGuess < answer) {
-      question.innerHTML = `User's answer is too low`; 
-      console.log(`User's answer is too low`);   
-      botTwoTurn();   
+    if(userGuess == answer){
+        question.innerHTML = `User is the winner`;  
+        console.log(`User is the winner`); 
+        //spelet stoppas, skickas till Game Over screen
+  
+    } else if (userGuess < answer) {
+        question.innerHTML = `User's answer is too low`; 
+        console.log(`User's answer is too low`);   
+        botTwoTurn();   
+  
+    } else {
+        question.innerHTML = `Sorry User! That is too high`;
+        console.log(`Sorry User! That is too high`); 
+        botTwoTurn();
+    }
+  })
 
-  } else {
-      question.innerHTML = `Sorry User! That is too high`;
-      console.log(`Sorry User! That is too high`); 
-      botTwoTurn();
-  }
 }
 
 function botTwoTurn() {
@@ -54,6 +66,7 @@ function botTwoTurn() {
   setTimeout(() => {
 
     let botTwoGuess = Math.floor(Math.random() * 20) + 1;
+    // let botTwoGuess = Math.floor(Math.random() * 20) + 1;
     console.log('Bot 2 guesses: ' + botTwoGuess)
   
     if(botTwoGuess == answer){
@@ -81,6 +94,8 @@ function botThreeTurn() {
   setTimeout(() => {
 
     let botThreeGuess = Math.floor(Math.random() * 20) + 1;
+
+    // let botThreeGuess = Math.floor(Math.random() * 20) + 1;
     console.log('Bot 3 guesses: ' + botThreeGuess)
   
     if(botThreeGuess == answer){
