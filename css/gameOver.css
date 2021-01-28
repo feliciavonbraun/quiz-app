@@ -60,4 +60,9 @@ button:hover {
 .center {
     justify-content: center;
     align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.endscore{
+    font-size: 1.2rem;
 }
