@@ -7,6 +7,7 @@ let userInput;
 let newInBetween;
 let answerMM = Math.floor(Math.random() * 20) + 1;
 let numberOfGuesses = 0;
+let gameLeader = document.getElementById('question');
 
 function rand(){
     let randNum = Math.floor(Math.random() * 20) + 1;
@@ -89,6 +90,7 @@ function checkingUserAnswer() {
 //------Bot 2------
 function botTwo() { setTimeout(() => {
 
+
     if(answerMM < userInput){
         newInBetween = 20 - userInput;
         secondAnswer = Math.floor(Math.random() * newInBetween) + 1;
@@ -128,6 +130,7 @@ function checkingBotTwoGuess(){
 
 //-------Bot 3 Guess
 function botThree() { setTimeout(() => {
+
 
     if(answerMM < secondAnswer){
         newInBetween = 20 - secondAnswer;
