@@ -1,5 +1,9 @@
-// answer = Math.floor(Math.random() * 20) + 1;
-// question = document.querySelector('h3');
+let answer = Math.floor(Math.random() * 20) + 1;
+
+let firstAnswer;
+let secondAnswer;
+let thirdAnswer;
+//question = document.querySelector('h3');
 console.log('CORRECT ANSWER IS: ' + answer);
 
 botOneTurn();
@@ -10,19 +14,20 @@ function botOneTurn() {
     let botOneGuess = Math.floor(Math.random() * 20) + 1;
     console.log('Bot 1 guesses: ' + botOneGuess)
   
-    if(botOneGuess == answer){
-        question.innerHTML = `Bot 1 is the winner`;  
+    if(answer == botOneGuess){ 
         console.log(`Bot 1 is the winner`); 
         //spelet stoppas, skickas till Game Over screen
   
-    } else if (botOneGuess < answer) {
-        question.innerHTML = `Bot 1's answer is too low`; 
-        console.log(`Bot 1's answer is too low`);   
+    } else if (answer < botOneGuess) {
+      console.log('lower');
+      newInBetween = 20 - firstAnswer;
+      secondAnswer = Math.floor(Math.random() * newInBetween) + 1;
+      document.getElementById("bot2Answer").innerHTML = secondAnswer;
+      return secondAnswer;
         userTurn();   
   
     } else {
-        question.innerHTML = `Sorry Bot 1! That is too high`;
-        console.log(`Sorry Bot 1! That is too high`); 
+        ; 
         userTurn();
     }
   }, 2000);
