@@ -7,7 +7,7 @@ let userInput;
 let newInBetween;
 let answerMM = Math.floor(Math.random() * 20) + 1;
 let numberOfGuesses = 0;
-let gameLeader = document.getElementById('question');
+let gameLeader = document.querySelector('.question');
 
 function rand(){
     let randNum = Math.floor(Math.random() * 20) + 1;
@@ -32,13 +32,16 @@ const botOne = setTimeout(() => {
 function checkingFirstGuess() {
 
     if(answerMM == firstAnswer){
+        gameLeader.innerHTML = 'Bot 1 Won!'
         console.log('bot1 won');
     }
     else if(answerMM < firstAnswer){
+        gameLeader.innerHTML = 'Lower...'
         console.log('lower');
         userGuess();
         
     } else {
+        gameLeader.innerHTML = 'Higher...'
         console.log('higher');
         userGuess();
     }
@@ -57,7 +60,8 @@ function userGuess(){
     console.log(userInput);
 
     if(answerMM == userInput){
-        console.log('correct user');
+        gameLeader.innerHTML = 'You Won!'
+        console.log('user won');
 
     } else if(answerMM < userInput){
         checkingUserAnswer();
@@ -76,10 +80,12 @@ function checkingUserAnswer() {
 
 
     if(answerMM < userInput){
+        gameLeader.innerHTML = 'Lower...'
         console.log('lower');
         botTwo();
 
     } else {
+        gameLeader.innerHTML = 'Higher...'
         console.log('higher');
         botTwo();
        
@@ -116,13 +122,16 @@ function checkingBotTwoGuess(){
     console.log(secondAnswer);
 
     if(answerMM == secondAnswer){
+        gameLeader.innerHTML = 'Bot 2 Won!'
         console.log('Bot two won');
 
     }else if(answerMM < secondAnswer){
+        gameLeader.innerHTML = 'Lower...'
         console.log('lower');
         botThree()
 
     } else {
+        gameLeader.innerHTML = 'Higher...'
         console.log('higher');
         botThree();
     }
@@ -154,12 +163,15 @@ function checkingBotThreeGuess(){
     console.log(thirdAnswer);
 
     if(answerMM == thirdAnswer){
+        gameLeader.innerHTML = 'Bot 3 Won!'
         console.log('bot3 won');
     }
     else if(answerMM < thirdAnswer){
+        gameLeader.innerHTML = 'Lower...'
         console.log('lower');
 
     } else {
+        gameLeader.innerHTML = 'Higher'
         console.log('higher');
     }
  }
