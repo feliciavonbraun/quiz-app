@@ -39,12 +39,13 @@ const botTwo = setTimeout(() => {
         else if(answerMM < firstAnswer){
             console.log('lower');
             newInBetween = 20 - firstAnswer;
-            secondAnswer = Math.floor(Math.random() * newInBetween) + 1;
+            secondAnswer = Math.floor(Math.random() * (newInBetween - 1) + 1);
             document.getElementById("bot2Answer").innerHTML = secondAnswer;
             return secondAnswer;
         } else {
             console.log('higher');
-            secondAnswer = rand() + firstAnswer;
+            newInBetween = 20 - firstAnswer;
+            secondAnswer = Math.floor(Math.random() * (20 - newInBetween) + newInBetween);
             document.getElementById("bot2Answer").innerHTML = secondAnswer;
             return secondAnswer;
         }
@@ -66,12 +67,13 @@ const botThree = setTimeout(() => {
         else if(answerMM < secondAnswer){
             console.log('lower');
             newInBetween = 20 - secondAnswer;
-            thirdAnswer = Math.floor(Math.random() * newInBetween) + 1;
+            thirdAnswer = Math.floor(Math.random() * (newInBetween - 1) + 1);
             document.getElementById("bot3Answer").innerHTML = thirdAnswer;
             return thirdAnswer;
         } else {
             console.log('higher');
-            thirdAnswer = Math.min(rand() + secondAnswer);
+            newInBetween = 20 - secondAnswer;
+            thirdAnswer = Math.floor(Math.random() * (20 - newInBetween) + newInBetween);
             document.getElementById("bot3Answer").innerHTML = thirdAnswer;
             return thirdAnswer;
         }
