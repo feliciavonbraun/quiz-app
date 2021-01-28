@@ -9,21 +9,18 @@ let answerMM = Math.floor(Math.random() * 20) + 1;
 let numberOfGuesses = 0;
 let gameLeader = document.querySelector('.question');
 
+//-----Random number generator-----
 function rand(){
     let randNum = Math.floor(Math.random() * 20) + 1;
     return randNum;
 }
 
-
+//-------Answer------
 console.log('Answer:' + answerMM);
 
 
 //-------Bot 1-------
 function botOne() { setTimeout(() => {
-
-    setTimeout(()=> {
-        gameLeader.innerHTML = 'Bot 1 turn'
-    }, 2000)
 
          firstAnswer = rand();
          document.getElementById("bot1Answer").innerHTML = firstAnswer;
@@ -86,14 +83,12 @@ function userGuess(){
         checkingUserAnswer();
     }
 
-
     });
 
 }
 
 //------Checking User Answer------
 function checkingUserAnswer() {
-
 
     if(answerMM < userInput){
         gameLeader.innerHTML = 'Lower...'
@@ -173,7 +168,7 @@ function checkingBotTwoGuess(){
     }
 }
 
-//-------Bot 3 Guess
+//-------Bot 3 Guess------
 function botThree() { setTimeout(() => {
 
     gameLeader.innerHTML = 'Bot 3 Turn'
