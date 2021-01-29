@@ -5,9 +5,12 @@
     --clr-yellow: #FFAF4F;
     --clr-orange: #ED733F;
 }
+html {
+    height: 100%;
+    width: 100%;
+}
 
 body {
-    /*background: var(--clr-dark-purple);*/
     background: linear-gradient(to bottom right, var(--clr-light-purple),var(--clr-purple));
     margin: 0;
     padding: 0;
@@ -19,6 +22,7 @@ body {
 header {
     font-family: 'Sedgwick Ave Display', cursive;
 }
+
 
 .text{
     justify-content: center;
