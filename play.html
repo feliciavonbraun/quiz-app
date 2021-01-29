@@ -26,33 +26,40 @@
 
         <div class="playfield">
             
+            <!-- Jag tog bort class="player" vid player-one osv -->
+            <!-- Ändrade namnet på class="answers" till guessArea-->
+            <!-- se bot3, inget ändrat med classes eller id där -->
             <div class="player">
                 <h2>BOT 1</h2>
-                <div class="player-one player">
-                    <div class="answers" >
-                        <span class="player-answer">Player 1: <span id="bot1Answer"></span></span>
-                        <span class="game-answer">Spelledare: XXX!</span>
+                <div class="player-one">
+                    <div class="guessArea" >
+                        <span class="player-answer">I Guess:</span>
+                        <span id="bot1Answer" class="botAnswer"></span>
+                        <span class="game-answer"></span>
                     </div>
                     
                     <div class="character">
-                        <p class="player-name">Bot 1</p>
+                        <p class="player-name"></p>
                         <img class="player-avatar" src="assets/Img/robot">
                     </div>
                 </div>
             </div>
             
+            <!-- ändrade namn på class="player-one" till userInputArea för den fanns 2 ggr -->
             <div class="player test">
                 <h2 id="playerNameFromLS">XXXX</h2>
-                <div class="player-one player">
+                <div class="userInputArea">
                     <div class="number-input">
                         <input id="inputUser" min='1' max='20' type="number" placeholder="Enter number...">
                         <button class="submit">Submit</button>
                     </div>
-                    <div class="answers">
+
+                    <div class="guessArea">
                         <span class="player-answer">YOU: 
                             <span id="spelare"></span>
                         </span>
-                        <span class="game-answer">Spelledare: XXX!</span>
+                        <!-- behöver vi denna -->
+                        <span class="game-answer"></span>
                     </div>
                     
                     <div class="character">
@@ -67,14 +74,16 @@
 
             <div class="player">
                 <h2>BOT 2</h2>
-                <div class="player-two player">
-                    <div class="answers">
-                        <span class="player-answer">Player 2: <span id="bot2Answer"></span></span>
-                        <span class="game-answer">Spelledare: XXX!</span>
+                <div class="player-two">
+                    <div class="guessArea">
+                        <span class="player-answer">I Guess:</span>
+                        <span id="bot2Answer" class="botAnswer"></span>
+                        <!-- kan vi ta bort denna nedan?? isf på flera ställen -->
+                        <span class="game-answer"></span>
                     </div>
 
                     <div class="character">
-                        <p class="player-name">Bot 2</p>
+                        <p class="player-name"></p>
                         <img class="player-avatar" src="assets/Img/robot">
                     </div>
                 </div>
@@ -84,7 +93,7 @@
                 <h2>BOT 3</h2>
                 <div class="player-three player">
                     <div class="answers">
-                        <span class="player-answer">Player 3: <span id="bot3Answer"></span></span>
+                        <span class="player-answer">I Guess: <span id="bot3Answer"></span></span>
                         <span class="game-answer">Spelledare: XXX!</span>
                     </div>
     
@@ -95,8 +104,8 @@
                 </div>
             </div>
     
-            <div class="player-one"></div>
-            <div class="player-one"></div>
+            <!-- <div class="player-one"></div>
+            <div class="player-one"></div> -->
 
         </div>
     </main>

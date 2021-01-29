@@ -35,47 +35,40 @@ main {
     justify-content: center;
 }
 
-/* h1 {
-    font-family: 'Sedgwick Ave Display', cursive;
-    color: white; 
-} */
-
-h2 {
-    font-family: 'Sedgwick Ave Display', cursive;
-    /* align-items: center;
-    justify-content: center; */
-}
-/* 
-h4 {
-    color: white;
-} */
-
-
 .playfield {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     
 }
-.player{
-    margin: 1rem;
-    background: rgba(255, 255, 255, 0.829);
-    border-radius: 2rem;
+
+h2 {
+    font-family: 'Sedgwick Ave Display', cursive;
+    background: rgba(255, 255, 255, 0.945);
+    padding: 1rem;
+    margin: 0rem;
+    border-radius: 1rem 1rem 0rem 0rem;
 }
 
-.player-one {
-    padding-top: 3rem;
-    display: flex;
-    flex-direction: row;
+.player{
+    margin: 1rem;
 }
-.player-two {
-    padding-top: 3rem;
+
+.player-one, .userInputArea, .player-two, .player-three {
+    background: rgba(255, 255, 255, 0.644);
+    padding: 1.5rem 1rem;
+    border-radius: 0 0 1rem 1rem;
     display: flex;
     flex-direction: row;
+
+}
+
+.userInputArea {
+    display: flex;
+    flex-direction: column;
 }
 
 .player-three{
-    padding-top: 3rem;
     display: flex;
     flex-direction: row;
 }
@@ -83,13 +76,19 @@ h4 {
     align-items: horizontal;
 }
 
-.answers {
-    padding-top: 2rem;
-    padding-right: 2rem;
-    text-align: left;
-    
+.guessArea {
+    background: white;
+    border-radius: 0.2rem;
     display: flex;
     flex-direction: column;
+    text-align: left;
+    padding: 1rem;
+    width: 7rem;
+}
+
+.botAnswer {
+    background: orange;
+    font-size: xx-large;
 }
 
 .player-avatar {
@@ -111,7 +110,6 @@ h4 {
 
 .number-input{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
