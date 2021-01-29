@@ -153,4 +153,6 @@ h4 {
     border-radius: 4px;
     box-sizing: border-box;
   }
-
+.user {
+    padding-top: 3.2rem;
+}
