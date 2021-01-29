@@ -1,18 +1,15 @@
-answer = Math.floor(Math.random() * 20) + 1;
-newAnswer = 
-question = document.querySelector('.question');
-submitBtn = document.querySelector('.submit');
-
-// let answerMM = Math.floor(Math.random() * 20) + 1;
+let answer = Math.floor(Math.random() * 20) + 1;
+const question = document.querySelector('.question');
+const submitBtn = document.querySelector('.submit');
+let min = 1;
+let max = 20;
 
 console.log('CORRECT ANSWER IS: ' + answer);
-
-botOneTurn();
 
 function botOneTurn() {
   
   setTimeout(() => {
-    let botOneGuess = Math.floor(Math.random() * 20) + 1;
+    let botOneGuess = Math.floor(Math.random() * (max - min)) + min;
     console.log('Bot 1 guesses: ' + botOneGuess)
   
     if(botOneGuess == answer){
@@ -22,12 +19,14 @@ function botOneTurn() {
   
     } else if (botOneGuess < answer) {
         question.innerHTML = `Bot 1's answer is too low`; 
-        console.log(`Bot 1's answer is too low`);   
+        console.log(`Bot 1's answer is too low`);  
+        min = botOneGuess + 1;  
         userTurn();   
   
     } else {
         question.innerHTML = `Sorry Bot 1! That is too high`;
         console.log(`Sorry Bot 1! That is too high`); 
+        max = botOneGuess - 1;
         userTurn();
     }
     return botOneGuess;
@@ -65,8 +64,7 @@ function botTwoTurn() {
   
   setTimeout(() => {
 
-    let botTwoGuess = Math.floor(Math.random() * 20) + 1;
-    // let botTwoGuess = Math.floor(Math.random() * 20) + 1;
+    let botTwoGuess = Math.floor(Math.random() * (max - min)) + min;
     console.log('Bot 2 guesses: ' + botTwoGuess)
   
     if(botTwoGuess == answer){
@@ -77,11 +75,13 @@ function botTwoTurn() {
     } else if (botTwoGuess < answer) {
         question.innerHTML = `Bot 2's answer is too low`; 
         console.log(`Bot 2's answer is too low`);   
+        min = botTwoGuess + 1;  
         botThreeTurn();   
   
     } else {
         question.innerHTML = `Sorry Bot 2! That is too high`;
         console.log(`Sorry Bot 2! That is too high`); 
+        max = botTwoGuess - 1;
         botThreeTurn();
     }
 
@@ -93,9 +93,7 @@ function botThreeTurn() {
   
   setTimeout(() => {
 
-    let botThreeGuess = Math.floor(Math.random() * 20) + 1;
-
-    // let botThreeGuess = Math.floor(Math.random() * 20) + 1;
+    let botThreeGuess = Math.floor(Math.random() * (max - min)) + min;
     console.log('Bot 3 guesses: ' + botThreeGuess)
   
     if(botThreeGuess == answer){
@@ -105,12 +103,14 @@ function botThreeTurn() {
   
     } else if (botThreeGuess < answer) {
         question.innerHTML = `Bot 3's answer is too low`; 
-        console.log(`Bot 3's answer is too low`);   
+        console.log(`Bot 3's answer is too low`);
+        min = botThreeGuess + 1;   
         botOneTurn();   
   
     } else {
         question.innerHTML = `Sorry Bot 3! That is too high`;
         console.log(`Sorry Bot 3! That is too high`); 
+        max = botThreeGuess - 1;
         botOneTurn();
     }
     

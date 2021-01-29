@@ -1,6 +1,6 @@
-// window.addEventListener('load', main);
+window.addEventListener('load', main);
 
-
-// function main(){
-//     checkWinner();
-// }
+function main(){
+  botOneTurn();
+  characterPage();
+}
