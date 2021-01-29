@@ -40,18 +40,35 @@ function openSignInArea() {
     document.getElementById("registerDiv").style.display = 'none';
 }
 
+
+//------------Register----------
+
 // Register user and saves in local storage
 function registerStorage() {
+
+    let users;
+    let pws;
     
     // Gets elements from HTML
-    var createUsername = document.getElementById('createUsername');
-    var createPw = document.getElementById('createPw');
+    let createUsername = document.getElementById('createUsername');
+    let createPw = document.getElementById('createPw');
     
     // Asks user to create username and password 
     if (createUsername.value.length == 0 && createPw.value.length == 0){
         alert('Please fill in email and password');
     } else {
         // Stores
+                 //if its empty it will create an empty array for the new user and password
+                 if(localStorage.getItem('createUsername') === null && localStorage.getItem('createPw') === null){
+                    users = [];
+                    pws = [];
+                }
+                //if its NOT empty, it will give back an old array from local storage with the old users and password
+                else {
+                    users = JSON.parse(localStorage.getItem('createUsername'));
+                    pws = JSON.parse(localStorage.getItem('createPw'));
+                }
+
         localStorage.setItem('createUsername', createUsername.value);
         localStorage.setItem('createPw', createPw.value);
         alert('acc created');
@@ -64,11 +81,18 @@ function registerStorage() {
         document.getElementById('signInDiv').style.display = 'none'; 
         document.getElementById('welcomeDiv').style.display = 'unset'; 
     }
+
+    //pushing the user  & password into the array
+     users.push(createUsername);
+     pws.push(createPw);
+     //saving the user to local storage
+     localStorage.setItem('createUsername', JSON.stringify(users));
+     localStorage.setItem('createPw',JSON.stringify(pws));
     
-    // Retrieves
-    document.getElementById("welcomePhrase").innerHTML = localStorage.getItem("createUsername");
 }
 
+
+//--------------Sign In---------------
 // Checks if username and pw is matching with local storage
 function signInStorage() {
     var createUsername = localStorage.getItem('createUsername');
@@ -104,14 +128,3 @@ function signInStorage() {
 //     document.getElementById("signInDiv").style.display = 'unset';
 // }
 
-
-let users;      
-// Retrieves     
-document.getElementById("welcomePhrase").innerHTML = localStorage.getItem("createUsername");      
-if(localStorage.getItem('createUsername') === null){
-    users = [];     
-} else {         
-    users = JSON.parse(localStorage.getItem('createUsername'));     
-}      
-users.push(createUsername);     
-localStorage.setItem('createUsername', JSON.stringify(createUsername));
