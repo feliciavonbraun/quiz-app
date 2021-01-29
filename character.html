@@ -5,51 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Screen</title>
     <link rel="stylesheet" href="./css/char.css">
-    <script src="JS/character.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header> 
+    <header class="textCenter"> 
         <h1>Character Screen</h1>
     </header>
     <main>
-        <div class="center">
-            
-            <button id="removeBtn">REMOVE LS</button>
-            <div id="registerDiv">
-                <h2>REGISTER:</h2>
-                <input id="createUsername" type="text" placeholder="Pick Username" value="" required/>
-                <input id="createPw" type="password" placeholder="Pick Password" value="" required/>
-                <input id="registerBtn" type="submit" value="Register"/> 
-                <!-- onClick="storeInputs()" -->
-                
-                <!-- <input type="text" class="textinfo">   -->
-                <!-- <input type="submit" class="okbtn" value="Ok" > -->
-            </div>
-            <div id="signInDiv">
-                <h2>SIGN IN:</h2>
-                <input id="username" type="text" placeholder="Username" value="" required/>
-                <input id="pw" type="password" placeholder="Password" value="" required/>
-                <input id="signInBtn" type="submit" value="Sign in"/> 
-
-            </div>
-            <div id="welcomeDiv">
-                <h2> Welcome </h2>
-                <h2 id="welcomePhrase"> XXXXX </h2>
-            </div>
-
-            <!-- <div class="enterName-container"><input placeholder="Enter your name..." type="text" class="textinfo">
-                <button type="submit"class="okbtn"value="Ok">Add</button>
-            </div> -->
-            
-
-        </div>
-        <div class="text">
+        <div class="flex text">
             <h2>Get to know your opponents</h2>
         </div>
 
-        <div class="bot-choices">
-            <div class="bot-card bot1">
+        <div class="flex bot-choices">
+            <div class="flex bot-card bot1">
                 <img src="./assets/Img/robot" alt="bild">
 
                 <h3>Schmickle</h3>
@@ -61,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="bot-card bot2">
+            <div class="flex bot-card bot2">
                 <img src="./assets/Img/robot" alt="bild">
 
                 <h3>T-1001</h3>
@@ -73,14 +41,13 @@
                 </div>
             </div>
 
-            <div class="bot-card bot3">
-
-                
+            <div class="flex bot-card bot3">
                 <img src="./assets/Img/robot" alt="bild">
 
                 <h3>Dicy dyed die</h3>
                 
                 <p>Dicy dyed die is known for its randomness. It will always be unpredictable and loves to play yatzy.</p>
+                
                 <div class="choose-opponent-btn">
                     <input type="submit" class="chooseOpponentButton" id="chooseOpponentBtn" value="Add opponent">
                 </div>
@@ -88,7 +55,7 @@
 
         </div>
       
-        <div class="btnstart">
+        <div class="flex btnstart">
             <input type="submit"class="Startgamebtn"value="Start Game" >
         </div>
     </main>
