@@ -6,45 +6,32 @@
 
 body {
   background: var(--clr-dark-purple);
-  overflow: hidden;
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   height: 100%;
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  color: white;
 }
 
-.container {
-  display: flex;
-  /* justify-content: center; */
-  /* margin: auto 0; */
-  align-items: center;
+main {
   flex-direction: column;
-  height: 100vh;
-  max-width: 30rem;
-  color: white;
-  text-align: center;
 }
 
 .logo {
   width: 15rem;
   margin-top: 1rem;
 }
+img{
+  height: 7rem;  
+}
 
-/* h1 {
-  font-size: 3.5rem;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  color: var(--clr-yellow);
-  font-family: 'Sedgwick Ave Display', cursive;
-} */
+/*#region - HOW TO PLAY */
+.container {
+  margin: auto 0;
+  flex-direction: column;
+  max-width: 30rem;
+  text-align: center;
+}
 
 h2 {
   font-size: 2.25rem;
@@ -86,4 +73,47 @@ p b {
   text-decoration: none;
   color: black;
 }
+/*#endregion */
 
+/*#region - Register and Signup */
+.inputFields {
+  width: 15%;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  box-sizing: border-box;
+}
+
+.submitBtn{
+  width: 12rem;
+  padding: 1rem;
+  border-radius: 50rem;
+  border: none;
+  background: var(--clr-yellow);
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
+  transition: 250ms ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+
+.submitBtn:hover {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
+  background: var(--clr-orange);
+}
+/*#endregion */
+
+/* REUSABLE CLASSES */
+.flex {
+  display: flex;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
