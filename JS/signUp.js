@@ -1,5 +1,3 @@
-window.addEventListener('load', characterPage) // DENNA SKA IN I MAIN SEN
-
 // Starts functions
 function characterPage() {
     defaultPage();
