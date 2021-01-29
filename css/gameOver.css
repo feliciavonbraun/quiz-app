@@ -1,11 +1,14 @@
 :root {
     --clr-dark-purple: #593267;
+    --clr-light-purple: #7866EA;
+    --clr-purple: #5A3383;
     --clr-yellow: #FFAF4F;
     --clr-orange: #ED733F;
 }
 
 body {
-    background: var(--clr-dark-purple);
+   /* background: var(--clr-dark-purple);*/
+    background: linear-gradient(to bottom right, var(--clr-light-purple),var(--clr-purple));
     overflow: hidden;
     margin: 0;
     padding: 0;
