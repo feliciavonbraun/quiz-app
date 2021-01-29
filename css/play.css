@@ -2,26 +2,32 @@
     --clr-dark-purple: #593267;
     --clr-yellow: #FFAF4F;
     --clr-orange: #ED733F;
-  }
+}
 
-  body {
+body {
     background: var(--clr-dark-purple);
-    
     
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     display: flex;
+    flex-direction: column;
 
     text-align: center;
     align-items: center;
     justify-content: center;
-  }
+}
 
+main {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
 h1 {
     font-family: 'Sedgwick Ave Display', cursive;
-    color: white;
-    
+    color: white; 
 }
+
 h2 {
     font-family: 'Sedgwick Ave Display', cursive;
     color: white;
@@ -34,12 +40,6 @@ h4 {
     color: white;
 }
 
-.playscreen {
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-
-}
 
 .playfield {
     justify-content: center;
@@ -155,4 +155,14 @@ h4 {
   }
 .user {
     padding-top: 3.2rem;
+}
+
+/* REAUSABLE CLASSES */
+.flex {
+    display: flex; 
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
 }
