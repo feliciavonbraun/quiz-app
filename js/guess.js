@@ -10,15 +10,11 @@ let question = document.querySelector('.question');
 let answer = rand();
 console.log(answer);
 
-
-
-//--------User choice---------
-
+let submit = document.querySelector('.submit');
 
 //-------------------Checking the winner---------------
 function checkWinner(){
 
-    let submit = document.querySelector('.submit');
     //when submitting the answer
     submit.addEventListener('click', () => {
 
@@ -27,19 +23,17 @@ function checkWinner(){
 
     if(userInput == answer){
         question.innerHTML = `Great! ${userInput}  was the right answer`; 
-        numberOfGuesses++;  
-      
+        numberOfGuesses++;   
  
     } else if(botOne < answer){
         question.innerHTML = `Ouch! ${userInput} is To low.`; 
-        numberOfGuesses++; 
-      
+        numberOfGuesses++;   
  
     } else{
         question.innerHTML = `Sorry! ${userInput} is To high`;
         numberOfGuesses++;   
     }
-    });
+  });
 };
 
 
