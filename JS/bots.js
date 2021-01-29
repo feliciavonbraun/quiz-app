@@ -62,14 +62,14 @@ function checkingFirstGuess() {
 function userGuess(){
 
     gameLeader.innerHTML = 'Your turn!'
-
+  
     let submit = document.querySelector('.submit');
     //when submitting the answer
     submit.addEventListener('click', () => {
-
+      
     //-----------User-----------
     userInput = document.getElementById('inputUser').value;
-
+    document.getElementById("spelare").innerHTML = + userInput; // sickar info från input felt till spelar kortettet
     console.log(userInput);
 
     if(answerMM == userInput){
@@ -86,10 +86,7 @@ function userGuess(){
     });
 
 }
-function Userplayer() {
-    userInput =document.getElementById('inputUser').value;
-    
-}
+
 //------Checking User Answer------
 function checkingUserAnswer() {
 
