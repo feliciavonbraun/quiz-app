@@ -8,6 +8,7 @@ let newInBetween;
 let answerMM = Math.floor(Math.random() * 20) + 1;
 let numberOfGuesses = 0;
 let gameLeader = document.querySelector('.question');
+let prevGuesses = [];
 
 //-----Random number generator-----
 function rand(){
@@ -24,6 +25,8 @@ function botOne() { setTimeout(() => {
 
          firstAnswer = rand();
          document.getElementById("bot1Answer").innerHTML = firstAnswer;
+         prevGuesses.push(firstAnswer);
+         // if{prevGuesses.indexOf(firstAnswer) kör funktionen igen
          console.log(firstAnswer);
          checkingFirstGuess();   
     
@@ -118,6 +121,7 @@ function botTwo() { setTimeout(() => {
     if(answerMM < userInput){
         newInBetween = 20 - userInput;
         secondAnswer = Math.floor(Math.random() * newInBetween) + 1;
+        prevGuesses.push(secondAnswer);
 
         if(secondAnswer != firstAnswer || userInput || thirdAnswer){
             document.getElementById("bot2Answer").innerHTML = secondAnswer;
@@ -127,7 +131,7 @@ function botTwo() { setTimeout(() => {
     } else {
         newInBetween = 20 - userInput;
         secondAnswer = Math.floor(Math.random() * (20 - newInBetween) + newInBetween);
-
+        prevGuesses.push(secondAnswer);
         if(secondAnswer != firstAnswer || userInput || thirdAnswer){
             document.getElementById("bot2Answer").innerHTML = secondAnswer;
             checkingBotTwoGuess();
@@ -177,7 +181,9 @@ function botThree() { setTimeout(() => {
     if(answerMM < secondAnswer){
         newInBetween = 20 - secondAnswer;
         thirdAnswer = Math.floor(Math.random() * newInBetween) + 1;
-
+        prevGuesses.push(thirdAnswer);
+        console.log(prevGuesses);
+    
         if(thirdAnswer != firstAnswer || userInput || secondAnswer){
             document.getElementById("bot3Answer").innerHTML = thirdAnswer;
             checkingBotThreeGuess();
@@ -186,6 +192,8 @@ function botThree() { setTimeout(() => {
     } else {
         newInBetween = 20 - secondAnswer;
         thirdAnswer = Math.floor(Math.random() * (20 - newInBetween) + newInBetween);
+        prevGuesses.push(thirdAnswer);
+        console.log(prevGuesses);
 
         if(thirdAnswer != firstAnswer || userInput || secondAnswer){
             document.getElementById("bot3Answer").innerHTML = thirdAnswer;
