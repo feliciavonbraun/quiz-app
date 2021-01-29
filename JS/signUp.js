@@ -6,26 +6,40 @@ function characterPage() {
     addEventListeners();
 }
 
-// DENNA FUNGERAR INTE
-// Shows registerDiv or signInDiv depending on local storage
+// Hides register and signIn inputs on default page
 function defaultPage() {
+    document.getElementById("howToPlayDiv").style.display = 'none';
+    document.getElementById("registerDiv").style.display = 'none';
+    document.getElementById("signInDiv").style.display = 'none';
     document.getElementById("welcomeDiv").style.display = 'none';
     
-    // if (localStorage.getItem('username')) {
-    //     //Items are stored in local storage
-    //     document.getElementById("registerDiv").style.display = 'none';
-    //     document.getElementById("signInDiv").style.display = 'unset';        
-    // } else {
-    //     //Local storage is empty
-    //     document.getElementById("registerDiv").style.display = 'unset';
-    //     document.getElementById("signInDiv").style.display = 'unset';
-    // }
 }
 
 function addEventListeners() {
-    const registerBtn = document.getElementById('registerBtn').addEventListener('click', registerStorage);    
-    const signInBtn = document.getElementById('signInBtn').addEventListener('click', signInStorage);    
-    const removeBtn = document.getElementById('removeBtn').addEventListener('click', removeLS);    
+    const howToPlayAreaBtn = document.getElementById('howToPlayAreaBtn').addEventListener('click', openHowToPlayArea);
+    const registerAreaBtn = document.getElementById('registerAreaBtn').addEventListener('click', openRegisterArea);
+    const signInAreaBtn = document.getElementById('signInAreaBtn').addEventListener('click', openSignInArea);
+
+    const registerSubmitBtn = document.getElementById('registerSubmitBtn').addEventListener('click', registerStorage);    
+    const signInSubmitBtn = document.getElementById('signInSubmitBtn').addEventListener('click', signInStorage);    
+}
+
+function openHowToPlayArea() {
+    document.getElementById("howToPlayDiv").style.display = 'unset';
+    document.getElementById("registerDiv").style.display = 'none';
+    document.getElementById("registerDiv").style.display = 'none';
+}
+
+function openRegisterArea() {
+    document.getElementById("registerDiv").style.display = 'unset';
+    document.getElementById("howToPlayDiv").style.display = 'none';
+    document.getElementById("signInDiv").style.display = 'none';
+}
+
+function openSignInArea() {
+    document.getElementById("signInDiv").style.display = 'unset';
+    document.getElementById("howToPlayDiv").style.display = 'none';
+    document.getElementById("registerDiv").style.display = 'none';
 }
 
 // Register user and saves in local storage
@@ -44,12 +58,15 @@ function registerStorage() {
         localStorage.setItem('createPw', createPw.value);
         alert('acc created');
         
-        // Hides and shows pages if registerBtn is pressed
-        // document.getElementById('registerDiv').style.display = 'none'; 
-        // document.getElementById('signInDiv').style.display = 'none'; 
+        // Hides and shows pages if registerSubmitBtn is pressed
+        document.getElementById('registerAreaBtn').style.display = 'none'; 
+        document.getElementById('registerAreaBtn').style.display = 'none'; 
+        document.getElementById('signInAreaBtn').style.display = 'none'; 
+        document.getElementById('registerDiv').style.display = 'none'; 
+        document.getElementById('signInDiv').style.display = 'none'; 
         document.getElementById('welcomeDiv').style.display = 'unset'; 
     }
-
+    
     // Retrieves
     document.getElementById("welcomePhrase").innerHTML = localStorage.getItem("createUsername");
 }
@@ -64,8 +81,13 @@ function signInStorage() {
     
     if (username.value == createUsername && pw.value == createPw) {
         alert('You are logged in.');
-        // document.getElementById('registerDiv').style.display = 'none'; 
-        // document.getElementById('signInDiv').style.display = 'none'; 
+        
+        // Hides and shows pages if signInSubmitBtn is pressed
+        document.getElementById('registerAreaBtn').style.display = 'none'; 
+        document.getElementById('registerAreaBtn').style.display = 'none'; 
+        document.getElementById('signInAreaBtn').style.display = 'none'; 
+        document.getElementById('registerDiv').style.display = 'none'; 
+        document.getElementById('signInDiv').style.display = 'none'; 
         document.getElementById('welcomeDiv').style.display = 'unset';  
     } else {
         alert('Error on login');
@@ -74,11 +96,24 @@ function signInStorage() {
     // Retrieves
     document.getElementById("welcomePhrase").innerHTML = localStorage.getItem("createUsername");
 }
+// if (localStorage.getItem('username')) {
+//     //Items are stored in local storage
+//     document.getElementById("registerDiv").style.display = 'none';
+//     document.getElementById("signInDiv").style.display = 'unset';        
+// } else {
+//     //Local storage is empty
+//     document.getElementById("registerDiv").style.display = 'unset';
+//     document.getElementById("signInDiv").style.display = 'unset';
+// }
 
-// TILLFÄLLIG 
-function removeLS() {
-    localStorage.removeItem('createUsername');
-    localStorage.removeItem('createPw');
-    localStorage.removeItem('username');
-    localStorage.removeItem('pw');
-}
+
+let users;      
+// Retrieves     
+document.getElementById("welcomePhrase").innerHTML = localStorage.getItem("createUsername");      
+if(localStorage.getItem('createUsername') === null){
+    users = [];     
+} else {         
+    users = JSON.parse(localStorage.getItem('createUsername'));     
+}      
+users.push(createUsername);     
+localStorage.setItem('createUsername', JSON.stringify(createUsername));
