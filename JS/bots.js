@@ -10,6 +10,8 @@ let numberOfGuesses = 0;
 let gameLeader = document.querySelector('.question');
 let prevGuesses = [];
 
+document.getElementById("playerNameFromLS").innerHTML = localStorage.getItem("createUsername");
+
 //-----Random number generator-----
 function rand(){
     let randNum = Math.floor(Math.random() * 20) + 1;
