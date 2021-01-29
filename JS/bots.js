@@ -86,7 +86,10 @@ function userGuess(){
     });
 
 }
-
+function Userplayer() {
+    userInput =document.getElementById('inputUser').value;
+    
+}
 //------Checking User Answer------
 function checkingUserAnswer() {
 
