@@ -10,15 +10,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/start.css">
+    <script src="JS/signUp.js"></script>
 </head>
 <body>
-    <img class="logo" src="./assets/Img/quiz-app-logo.png" alt="logo">
-    <div class="container">
-        <h2>How To Play</h2>
-        <p> <b>Hello Player!</b> <br> Try to guess the right number between 1 and 20.
-            If you guess the wrong number, the game leader will tell you if the correct answer is Higher or Lower. Then the turn moves on to the next player until someone guesses the correct answer.</p>
-        <button class="play-btn"  ><a href="./character.html">PLAY</a>  </button>
-    </div>
     
+    <header class="flex center">
+        <img class="logo" src="./assets/Img/quiz-app-logo.png" alt="logo">
+    </header>
+    <main class="flex center">
+        <div class="container flex center">
+            <h2>How To Play</h2>
+            <p> 
+                <b>Hello Player!</b> <br> Try to guess the right number between 1 and 20.
+                If you guess the wrong number, the game leader will tell you if the correct answer is Higher or Lower. 
+                Then the turn moves on to the next player until someone guesses the correct answer.
+            </p>
+            <button class="play-btn"><a href="./character.html">PLAY</a></button>
+        </div>
+
+        <div class="center enterName-container"> 
+            <button id="removeBtn">REMOVE LS</button>
+            <h2>REGISTER:</h2>
+            <div id="registerDiv">
+                <input id="createUsername" class="inputFields" type="text" placeholder="Pick Username" value="" required/>
+                <input id="createPw" class="inputFields" type="password" placeholder="Pick Password" value="" required/>
+                <input id="registerBtn" class="submitBtn" type="submit" value="Register"/>  
+            </div>
+
+            <h2>SIGN IN:</h2>
+            <div id="signInDiv">
+                <input id="username" class="inputFields" type="text" placeholder="Username" value="" required/>
+                <input id="pw" class="inputFields" type="password" placeholder="Password" value="" required/>
+                <input id="signInBtn" class="submitBtn" type="submit" value="Sign in"/> 
+            </div>
+
+            <div id="welcomeDiv">
+                <h2> Welcome </h2>
+                <h2 id="welcomePhrase"></h2>
+            </div>
+        </div>
+    </main>
+
 </body>
 </html>
