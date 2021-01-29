@@ -17,77 +17,91 @@
 </head>
 <!-- onload="main()" -->
 <body>
-    <div class="playscreen">
-        <h1>Playscreen</h1>
-
-        <h4 class="question">
-            Guess a number between 1 - 20
-        </h4>
-
-        <div class="number-input">
-
-                <input id="inputUser" min='1' max='20' type="number" placeholder="Enter number...">
-                <button class="submit">Submit</button>
+    <header>
+        <div class="gameLeader flex">
+            <img src="assets/Img/spel-ledare.svg" alt="gameLeader" width="10%">
+            <p>Let's Play! What number do you want to guess? </p> 
         </div>
-        <div class="playfield">
-         
-            <div class="player">
-            <div class="player-one player">
-                <div class="answers">
-                <span class="player-answer">Player 1: <span id="bot1Answer"></span></span>
-                <span class="game-answer">Spelledare: higher!</span>
-                </div>
-
-                <div class="character">
-                    <p class="player-name">Bot 1</p>
-                    <img class="player-avatar" src="assets/Img/robot">
-                </div>
-            </div>
-            <div class="player test">
-                <div class="player-one player">
-                    <div class="answers">
-                    <span class="player-answer">YOU: <span id="spelare"></span></span>
-                    <span class="game-answer">Spelledare: higher!</span>
-                    </div>
+    </header>
     
-                    <div class="character">
-                        <img class="player-avatar user" src="assets/Img/alinespelare.png">
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="player">
-            <div class="player-two player">
-                <div class="answers">
-                <span class="player-answer">Player 2: <span id="bot2Answer"></span></span>
-                <span class="game-answer">Spelledare: higher!</span>
-                </div>
+    <main class="playscreen">
 
-                <div class="character">
-                    <p class="player-name">Bot 2</p>
-                    <img class="player-avatar" src="assets/Img/robot">
-                </div>
+        <div class="playfield">
+            
+            <div class="player">
+                <h2>BOT 1</h2>
+                <div class="player-one player">
+                    <div class="answers" >
+                        <span class="player-answer">Player 1: <span id="bot1Answer"></span></span>
+                        <span class="game-answer">Spelledare: XXX!</span>
+                    </div>
+                    
+                    <div class="character">
+                        <p class="player-name">Bot 1</p>
+                        <img class="player-avatar" src="assets/Img/robot">
+                    </div>
                 </div>
             </div>
+            
+            <div class="player test">
+                <h2 id="playerNameFromLS">XXXX</h2>
+                <div class="player-one player">
+                    <div class="number-input">
+                        <input id="inputUser" min='1' max='20' type="number" placeholder="Enter number...">
+                        <button class="submit">Submit</button>
+                    </div>
+                    <div class="answers">
+                        <span class="player-answer">YOU: 
+                            <span id="spelare"></span>
+                        </span>
+                        <span class="game-answer">Spelledare: XXX!</span>
+                    </div>
+                    
+                    <div class="character">
+                        <img class="player-avatar user" src="assets/Img/user.svg">
+                    </div>
+                </div>
+                <h4 class="question">
+                    Guess a number between 1 - 20
+                </h4>
+                
+            </div>
+
             <div class="player">
+                <h2>BOT 2</h2>
+                <div class="player-two player">
+                    <div class="answers">
+                        <span class="player-answer">Player 2: <span id="bot2Answer"></span></span>
+                        <span class="game-answer">Spelledare: XXX!</span>
+                    </div>
+
+                    <div class="character">
+                        <p class="player-name">Bot 2</p>
+                        <img class="player-avatar" src="assets/Img/robot">
+                    </div>
+                </div>
+            </div>
+
+            <div class="player">
+                <h2>BOT 3</h2>
                 <div class="player-three player">
                     <div class="answers">
-                    <span class="player-answer">Player 3: <span id="bot3Answer"></span></span>
-                    <span class="game-answer">Spelledare: higher!</span>
+                        <span class="player-answer">Player 3: <span id="bot3Answer"></span></span>
+                        <span class="game-answer">Spelledare: XXX!</span>
                     </div>
     
                     <div class="character">
                         <p class="player-name">Bot 3</p>
                         <img class="player-avatar" src="assets/Img/robot">
                     </div>
-                    </div>
                 </div>
+            </div>
     
             <div class="player-one"></div>
             <div class="player-one"></div>
 
         </div>
-    </div>
+    </main>
     
 </body>
 </html>
