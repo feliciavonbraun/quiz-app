@@ -58,7 +58,6 @@ function registerStorage() {
         alert('Please fill in email and password');
     } else {
         // Store
-
         localStorage.setItem('createUsername', createUsername.value);
         localStorage.setItem('createPw', createPw.value);
         alert('acc created');
@@ -70,6 +69,9 @@ function registerStorage() {
         document.getElementById('registerDiv').style.display = 'none'; 
         document.getElementById('signInDiv').style.display = 'none'; 
         document.getElementById('welcomeDiv').style.display = 'unset'; 
+
+        // Retrieves
+        document.getElementById("welcomePhrase").innerHTML = localStorage.getItem("createUsername");
     }
    
 }
