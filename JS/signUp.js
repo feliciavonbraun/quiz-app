@@ -4,19 +4,9 @@ function characterPage() {
     addEventListeners();
 }
 
-// Hides register and signIn inputs on default page
-function defaultPage() {
-    document.getElementById("howToPlayDiv").style.display = 'none';
-    document.getElementById("registerDiv").style.display = 'none';
-    document.getElementById("signInDiv").style.display = 'none';
-    document.getElementById("welcomeDiv").style.display = 'none';
-    
-}
 
 function addEventListeners() {
-    const howToPlayAreaBtn = document.getElementById('howToPlayAreaBtn').addEventListener('click', openHowToPlayArea);
-    const registerAreaBtn = document.getElementById('registerAreaBtn').addEventListener('click', openRegisterArea);
-    const signInAreaBtn = document.getElementById('signInAreaBtn').addEventListener('click', openSignInArea);
+
 
     const registerSubmitBtn = document.getElementById('registerSubmitBtn').addEventListener('click', registerStorage);    
     const signInSubmitBtn = document.getElementById('signInSubmitBtn').addEventListener('click', signInStorage);    
