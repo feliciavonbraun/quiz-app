@@ -3,7 +3,7 @@ document.getElementById("endscore").innerHTML = localStorage.getItem("createUser
 function score() {
     localStorage.key(createUsername)
     localStorage.key (userScore)
-    localStorage.key()
+   
   }
 
 
