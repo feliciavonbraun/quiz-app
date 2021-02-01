@@ -39,7 +39,8 @@ function userTurn() {
   
   submitBtn.addEventListener('click', () => {
 
-    let userGuess = document.getElementById('inputUser').value;
+    let userGuess = parseInt(document.getElementById('inputUser').value);
+    console.log('User guesses: ' + userGuess);
 
     if(userGuess == answer){
         question.innerHTML = `User is the winner`;  
@@ -49,11 +50,15 @@ function userTurn() {
     } else if (userGuess < answer) {
         question.innerHTML = `User's answer is too low`; 
         console.log(`User's answer is too low`);   
+        min = userGuess + 1; 
+        console.log('New min is: ' + min); 
         botTwoTurn();   
   
     } else {
         question.innerHTML = `Sorry User! That is too high`;
         console.log(`Sorry User! That is too high`); 
+        max = userGuess - 1;
+        console.log('New max is: ' + max); 
         botTwoTurn();
     }
   })
