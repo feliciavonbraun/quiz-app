@@ -23,7 +23,7 @@
         <div class="container flex center">
             <h2 id="howToPlayAreaBtn">How To Play</h2>
             <p id="howToPlayDiv"> 
-                <b>Hello Player!</b> <br> Try to guess the right number between 1 and 20.
+                 Try to guess the right number between 1 and 20.
                 If you guess the wrong number, the game leader will tell you if the correct answer is Higher or Lower. 
                 Then the turn moves on to the next player until someone guesses the correct answer.
             </p>
@@ -32,25 +32,28 @@
 
         <div class="center enterName-container"> 
             
-            <h2 id="registerAreaBtn" class="registerAreaBtn">REGISTER:</h2>
+        <div class="regAndSign-container">   
+            
             <div id="registerDiv">
+                <h2 id="registerAreaBtn" class="registerAreaBtn">REGISTER:</h2>
                 <input id="createUsername" class="inputFields" type="text" placeholder="Pick Username" value="" required/>
                 <input id="createPw" class="inputFields" type="password" placeholder="Pick Password" value="" required/>
                 <input id="registerSubmitBtn" class="submitBtn" type="submit" value="Register"/>  
             </div>
             
-            <h2 id="signInAreaBtn">SIGN IN:</h2>
+            
             <div id="signInDiv">
+                <h2 id="signInAreaBtn">SIGN IN:</h2>
                 <input id="username" class="inputFields" type="text" placeholder="Username" value="" required/>
                 <input id="pw" class="inputFields" type="password" placeholder="Password" value="" required/>
                 <input id="signInSubmitBtn" class="submitBtn" type="submit" value="Sign in"/> 
             </div>
+        </div>    
 
-            <div id="welcomeDiv">
-                <h2> Welcome </h2>
-                <h2 id="welcomePhrase"></h2>
-            </div>
         </div>
+            
+        <a class="playBtn" href="./character.html">Play</a>
+        </div>        
     </main>
 
 </body>
