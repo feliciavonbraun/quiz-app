@@ -83,8 +83,8 @@ function registerStorage() {
     }
 
     //pushing the user  & password into the array
-     users.push(createUsername);
-     pws.push(createPw);
+     users.push(createUsername.value);
+     pws.push(createPw.value);
      //saving the user to local storage
      localStorage.setItem('createUsername', JSON.stringify(users));
      localStorage.setItem('createPw',JSON.stringify(pws));
@@ -118,13 +118,5 @@ function signInStorage() {
     // Retrieves
     document.getElementById("welcomePhrase").innerHTML = localStorage.getItem("createUsername");
 }
-// if (localStorage.getItem('username')) {
-//     //Items are stored in local storage
-//     document.getElementById("registerDiv").style.display = 'none';
-//     document.getElementById("signInDiv").style.display = 'unset';        
-// } else {
-//     //Local storage is empty
-//     document.getElementById("registerDiv").style.display = 'unset';
-//     document.getElementById("signInDiv").style.display = 'unset';
-// }
+
 
