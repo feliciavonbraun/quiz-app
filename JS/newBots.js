@@ -3,10 +3,10 @@ const question = document.querySelector('.question');
 const submitBtn = document.querySelector('.submit');
 let min = 1;
 let max = 20;
-let userScore = 0;
-let botOneScore = 0;
-let botTwoScore = 0;
-let botThreeScore = 0;
+let userScore = localStorage.getItem('userScore');
+let botOneScore = localStorage.getItem('botOneScore');
+let botTwoScore = localStorage.getItem('botTwoScore');
+let botThreeScore = localStorage.getItem('botThreeScore');
 
 console.log('CORRECT ANSWER IS: ' + answer);
 
@@ -19,6 +19,7 @@ function botOneTurn() {
     if(botOneGuess == answer){
         question.innerHTML = `Bot 1 is the winner`;  
         botOneScore++;
+        localStorage.setItem('botOneScore', botOneScore);
         console.log(botOneScore);
         console.log(`Bot 1 is the winner`); 
 
@@ -53,6 +54,7 @@ function userTurn() {
         question.innerHTML = `User is the winner`;  
         console.log(`User is the winner`); 
         userScore++;
+        localStorage.setItem('userScore', userScore);
         console.log(userScore);
         //spelet stoppas, skickas till Game Over screen
   
@@ -85,6 +87,7 @@ function botTwoTurn() {
         question.innerHTML = `Bot 2 is the winner`;  
         console.log(`Bot 2 is the winner`);
         botTwoScore++;
+        localStorage.setItem('botTwoScore', botTwoScore);
         console.log(botTwoScore); 
         //spelet stoppas, skickas till Game Over screen
   
@@ -116,6 +119,7 @@ function botThreeTurn() {
         question.innerHTML = `Bot 3 is the winner`;  
         console.log(`Bot 3 is the winner`); 
         botThreeScore++;
+        localStorage.setItem('botThreeScore', botThreeScore);
         console.log(botThreeScore);
         //spelet stoppas, skickas till Game Over screen
   
