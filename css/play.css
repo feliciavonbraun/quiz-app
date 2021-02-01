@@ -21,6 +21,7 @@ body {
 }
 
 .gameLeader {
+    display: flex;
     background: rgba(255, 255, 255, 0.644);
     padding: 1rem;
     border-radius: 1rem;
@@ -33,66 +34,57 @@ body {
 }
 
 main {
-    text-align: center;
-    align-items: center;
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* h1 {
-    font-family: 'Sedgwick Ave Display', cursive;
-    color: white; 
-} */
-
-h2 {
-    font-family: 'Sedgwick Ave Display', cursive;
-    /* align-items: center;
-    justify-content: center; */
-}
-/* 
-h4 {
-    color: white;
-} */
-
-
-.playfield {
+/* .playfield {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     
+} */
+
+h2 {
+    font-family: 'Sedgwick Ave Display', cursive;
+    background: rgba(255, 255, 255, 0.945);
+    padding: 1rem;
+    margin: 0rem;
+    border-radius: 1rem 1rem 0rem 0rem;
 }
+
 .player{
     margin: 1rem;
-    background: rgba(255, 255, 255, 0.829);
-    border-radius: 2rem;
 }
 
-.player-one {
-    padding-top: 3rem;
-    display: flex;
-    flex-direction: row;
-}
-.player-two {
-    padding-top: 3rem;
+.player-one, .userInputArea, .player-two, .player-three {
+    background: rgba(255, 255, 255, 0.644);
+    padding: 1.5rem 1rem;
+    border-radius: 0 0 1rem 1rem;
     display: flex;
     flex-direction: row;
 }
 
-.player-three{
-    padding-top: 3rem;
+.guessAndImageArea {
     display: flex;
     flex-direction: row;
-}
-.character {
-    align-items: horizontal;
+    justify-content: space-between;
 }
 
-.answers {
-    padding-top: 2rem;
-    padding-right: 2rem;
-    text-align: left;
-    
+.guessArea {
+    background: white;
+    border-radius: 0.2rem;
     display: flex;
     flex-direction: column;
+    text-align: left;
+    padding: 1rem;
+    width: 7rem;
+    height: 4rem;
+}
+
+.numberAnswer {
+    font-size: xx-large;
 }
 
 .player-avatar {
@@ -100,40 +92,26 @@ h4 {
     width: auto;
 }
 
-/* .player-answer {
-    color: white
-} */
-
-.playfield p {
-    color:white;
-}
-
-/* .game-answer {
-    color: yellow;
-} */
-
-.number-input{
+.userInputArea {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 #inputUser{
     outline: none;
-    padding: 0.5rem;
-    width: 10rem;
+    padding: 0.5rem 1rem;
+    width: 7rem;
     height: 2rem;
     border-radius: 0.5rem;
     border: none;
     margin-bottom: 0.5rem;
-    
 }
+
 .submit{
     outline: none;
     cursor: pointer;
     height: 2rem;
-    width: 10rem;
+    width: 7rem;
     font-size: 1.2rem;
     border-radius: 1rem;
     border: none;
@@ -141,7 +119,46 @@ h4 {
     background-color:#FFAF4F ;
 }
 
-.btnsub{
+.submit:hover {
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
+    background: var(--clr-orange);
+}
+
+
+/* TROR EJ DETTA ANVÄNDS */
+
+/* .character {
+    align-items: horizontal;
+} */
+
+/* .user {
+    padding-top: 3.2rem;
+} */
+
+/* .number-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .player-three{
+    display: flex;
+    flex-direction: row;
+} */
+
+/* .player-answer {
+    color: white
+} */
+
+/* .playfield p {
+    color:white;
+} */
+
+/* .game-answer {
+    color: yellow;
+} */
+
+/* .btnsub{
     padding: 1rem 6rem;
     border-radius: 50rem;
     border: none;
@@ -153,12 +170,9 @@ h4 {
     transition: 250ms ease-in-out;
     cursor: pointer;
     outline: none;
-}
-.btnsub:hover {
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
-    background: var(--clr-orange);
-}
-  .textinfo{
+} */
+
+/* .textinfo{
     width: 45%;
     padding: 1.5rem 2rem;
     margin: 8px 0;
@@ -166,17 +180,4 @@ h4 {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-}
-.user {
-    padding-top: 3.2rem;
-}
-
-/* REAUSABLE CLASSES */
-.flex {
-    display: flex; 
-}
-
-.center {
-    justify-content: center;
-    align-items: center;
-}
+} */
