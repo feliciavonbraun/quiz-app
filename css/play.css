@@ -6,9 +6,16 @@
     --clr-orange: #ED733F;
 }
 
+body, html {
+    overflow-x: hidden;
+}
+
 body {
    /* background: var(--clr-dark-purple);*/
     background: linear-gradient(to bottom right, var(--clr-light-purple),var(--clr-purple));
+
+    height: 100vh;
+    width: 100vw;
     
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
@@ -31,6 +38,15 @@ body {
     background: rgba(255, 255, 255, 0.829);
     padding: 1rem;
     border-radius: .5rem;
+}
+
+.timer-section {
+    background: white;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-radius: 6px;
 }
 
 main {

@@ -42,37 +42,71 @@ function botOneTurn() {
 
 function userTurn() {
 
-  console.log('USER, it is your turn')
-  
-  submitBtn.addEventListener('click', () => {
+  startTimer();
 
-    let userGuess = parseInt(document.getElementById('inputUser').value);
-    console.log('User guesses: ' + userGuess);
+  function startTimer() {
 
-    if(userGuess == answer){
-        question.innerHTML = `User is the winner`;  
-        console.log(`User is the winner`); 
-        userScore++;
-        console.log(userScore);
-        //spelet stoppas, skickas till Game Over screen
-  
-    } else if (userGuess < answer) {
-        question.innerHTML = `User's answer is too low`; 
-        console.log(`User's answer is too low`);   
-        min = userGuess + 1; 
-        console.log('New min is: ' + min); 
-        botTwoTurn();   
-  
-    } else {
-        question.innerHTML = `Sorry User! That is too high`;
-        console.log(`Sorry User! That is too high`); 
-        max = userGuess - 1;
-        console.log('New max is: ' + max); 
+    // TIMER
+    var sec = 15;
+    var timer = setInterval( () => {
+      if (sec <= 9) {
+        document.getElementById('timer').innerHTML='00:0'+sec;
+      } else {
+        document.getElementById('timer').innerHTML='00:'+sec;
+      }
+      sec--;
+
+      //om tiden blir mindre än noll
+      if (sec < 0) {
+        clearInterval(timer);
+        document.getElementById('timer').innerHTML="00:15";
         botTwoTurn();
-    }
-  })
+      }
+  
+    }, 1000);
+
+        //KOLLAR OM SVARET ÄR KORREKT, FÖR LÅGT ELLER FÖR HÖGT
+
+        console.log('USER, it is your turn')
+        
+        submitBtn.addEventListener('click', () => {
+      
+          let userGuess = parseInt(document.getElementById('inputUser').value);
+          console.log('User guesses: ' + userGuess);
+      
+          if(userGuess == answer){
+              question.innerHTML = `User is the winner`;  
+              console.log(`User is the winner`); 
+              userScore++;
+              console.log(userScore);
+              clearInterval(timer);
+              document.getElementById('timer').innerHTML="00:15"
+              //spelet stoppas, skickas till Game Over screen
+        
+          } else if (userGuess < answer) {
+              question.innerHTML = `User's answer is too low`; 
+              console.log(`User's answer is too low`);   
+              min = userGuess + 1; 
+              clearInterval(timer);
+              document.getElementById('timer').innerHTML="00:15"
+              botTwoTurn();   
+        
+          } else {
+              question.innerHTML = `Sorry User! That is too high`;
+              console.log(`Sorry User! That is too high`); 
+              max = userGuess - 1;
+              clearInterval(timer);
+              document.getElementById('timer').innerHTML="00:15"
+              botTwoTurn();
+          }
+        })
+
+
+  
+  }
 
 }
+
 
 function botTwoTurn() {
   
@@ -135,3 +169,67 @@ function botThreeTurn() {
   }, 2000);
 
 }
+
+
+
+
+
+
+
+
+// function userTurn() {
+
+//   startTimer();
+
+//   console.log('USER, it is your turn')
+  
+//   submitBtn.addEventListener('click', () => {
+
+//     let userGuess = parseInt(document.getElementById('inputUser').value);
+//     console.log('User guesses: ' + userGuess);
+
+//     if(userGuess == answer){
+//         question.innerHTML = `User is the winner`;  
+//         console.log(`User is the winner`); 
+//         userScore++;
+//         console.log(userScore);
+//         //spelet stoppas, skickas till Game Over screen
+  
+//     } else if (userGuess < answer) {
+//         question.innerHTML = `User's answer is too low`; 
+//         console.log(`User's answer is too low`);   
+//         min = userGuess + 1; 
+//         console.log('New min is: ' + min); 
+//         botTwoTurn();   
+  
+//     } else {
+//         question.innerHTML = `Sorry User! That is too high`;
+//         console.log(`Sorry User! That is too high`); 
+//         max = userGuess - 1;
+//         console.log('New max is: ' + max); 
+//         botTwoTurn();
+//     }
+//   })
+
+// }
+
+// function startTimer() {
+
+//     var sec = 15;
+
+//     var timer = setInterval( () => {
+//       if (sec <= 9) {
+//         document.getElementById('timer').innerHTML='00:0'+sec;
+//       } else {
+//         document.getElementById('timer').innerHTML='00:'+sec;
+//       }
+
+//       sec--;
+
+//       if (sec < 0) {
+//           clearInterval(timer);
+//           botTwoTurn();
+//       }
+//     }, 1000);
+
+// }
