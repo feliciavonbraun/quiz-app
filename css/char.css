@@ -24,7 +24,8 @@ header {
     justify-content: center;
     align-items: center;
     height: 15vh;
-    font-family: 'Sedgwick Ave Display', cursive;
+    text-shadow: 1px 0px 4px black;
+
 }
 
 
