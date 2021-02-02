@@ -4,18 +4,20 @@ function characterPage() {
     addEventListeners();
 }
 
+function defaultPage() {
+    document.getElementById("howToPlayDiv").style.display = 'none';
+}
 
 function addEventListeners() {
 
-
+    const howToPlayAreaBtn = document.getElementById('howToPlayAreaBtn').addEventListener('click', openHowToPlayArea);
     const registerSubmitBtn = document.getElementById('registerSubmitBtn').addEventListener('click', registerStorage);    
     const signInSubmitBtn = document.getElementById('signInSubmitBtn').addEventListener('click', signInStorage);    
 }
 
 function openHowToPlayArea() {
     document.getElementById("howToPlayDiv").style.display = 'unset';
-    document.getElementById("registerDiv").style.display = 'none';
-    document.getElementById("registerDiv").style.display = 'none';
+
 }
 
 function openRegisterArea() {

@@ -10,33 +10,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/gameOver.css">
-<script src="JS/gameOver.js"></script>
+    <script src="JS/gameover.js"></script>
 </head>
 <body>
     <header class="flex center">
         <h1>GAME OVER</h1>
-</header>
+    </header>
 
     <main class="flex center">
 
         <p id="winOrLoseText">
             <!-- code from JS -->
-            Winner woho!!
         </p>
         <div>
             <h2>High Score</h2>
-            <ol class="endscore" id="endscore">
+            <ol class="highScore" id="highScore">
                 <!-- code from JS -->
-                <li>lisa</li>
-                <li>anna</li>
-                <li>kalle</li>
+                <li> 
+                    <span id="displayPlayerName">VISAR NAMNET</span>
+                    <span id="displayPlayerScore1"> VISAR SCORE</span>
+                </li>
+                <li>
+                    <span id="displayPlayerName">VISAR NAMNET</span>
+                    <span id="displayPlayerScore2"> VISAR SCORE</span>
+                </li>
+                <li>
+                    <span id="displayPlayerName">VISAR NAMNET</span>
+                    <span id="displayPlayerScore3"> VISAR SCORE</span>
+                </li>
+                <li>
+                    <span id="displayPlayerName">VISAR NAMNET</span>
+                    <span id="displayPlayerScore4"> VISAR SCORE</span>
+                </li>
             </ol>
 
-            <button id="restartBtn" class="flex center">
-                RESTART GAME
-            </button>
-
+            
         </div>
+        <button id="restartBtn" class="flex center">
+            RESTART GAME
+        </button>
     </main>
 
     

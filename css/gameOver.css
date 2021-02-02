@@ -7,14 +7,11 @@
 }
 
 body {
-   /* background: var(--clr-dark-purple);*/
     background: linear-gradient(to bottom right, var(--clr-light-purple),var(--clr-purple));
-    overflow: hidden;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    color: white;
 }
 
 h1 {
@@ -29,11 +26,25 @@ h1 {
 main {
     flex-direction: column;
     text-align: center;
-    
 }
 
 #winOrLoseText {
     font-size: x-large;
+}
+
+h2 {
+    background: white;
+    border-radius: 1rem 1rem 0rem 0rem;
+    margin: 0;
+    padding: 1rem;
+}
+
+ol {
+    background: rgba(255, 255, 255, 0.644);
+    border-radius: 0 0 1rem 1rem;
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 button {
@@ -54,9 +65,7 @@ button:hover {
     background: var(--clr-orange);
 }
 
-
 /* REUSABLE CLASSES */
-
 .flex {
     display: flex;
 }
