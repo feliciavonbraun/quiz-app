@@ -20,12 +20,6 @@ function botOneTurn() {
   setTimeout(() => {
     let botOneGuess = Math.floor(Math.random() * (max - min)) + min;
     console.log('Bot 1 guesses: ' + botOneGuess);
-
-    userInputField.addEventListener("keyup", function(event) {
-      if (event.key === 'Enter') {
-        submitBtn.click();
-      }
-    });
   
     if(botOneGuess == answer){
         question.innerHTML = `Bot 1 is the winner`;  
@@ -88,6 +82,12 @@ function userTurn() {
     //KOLLAR OM SVARET ÄR KORREKT, FÖR LÅGT ELLER FÖR HÖGT
 
     console.log('USER, it is your turn')
+
+    userInputField.addEventListener("keyup", function(event) {
+      if (event.key === 'Enter') {
+        submitBtn.click();
+      }
+    });
     
     submitBtn.addEventListener('click', () => {
   
