@@ -26,6 +26,10 @@
             <!-- Code injected by by JS -->
         </h4>
     </header>
+
+    <div class="timer-section">
+        <span id="timer">00:15</span>
+    </div>
     
     <!-- tror ej classen playscreen används -->
     <main class="playscreen">
@@ -39,7 +43,7 @@
                 <h2>BOT 1</h2>
                 <div class="player-one">
                     <div class="guessArea" >
-                        <span class="player-answer">I Guess:</span>
+                        <span class="player-answer">My Guess:</span>
                         <span id="bot1Answer" class="numberAnswer"></span>
                         <span class="game-answer"></span>
                     </div>
@@ -63,7 +67,8 @@
                         <div class="guessArea">
                             <!-- se över detta om vi behöver allt? -->
                             <span class="player-answer numberAnswer">
-                                <span id="spelare"></span>
+                                <!-- <span class="player-answer">My Guess:</span> -->
+                                <span id="playerAnswer"></span>
                             </span>
                             <!-- behöver vi denna??? -->
                             <span class="game-answer"></span>
@@ -81,7 +86,7 @@
                 <h2>BOT 2</h2>
                 <div class="player-two">
                     <div class="guessArea">
-                        <span class="player-answer">I Guess:</span>
+                        <span class="player-answer">My Guess:</span>
                         <span id="bot2Answer" class="numberAnswer"></span>
                         <!-- kan vi ta bort denna nedan?? isf på flera ställen -->
                         <span class="game-answer"></span>
@@ -98,7 +103,7 @@
                 <h2>BOT 3</h2>
                 <div class="player-three">
                     <div class="guessArea">
-                        <span class="player-answer">I Guess:</span>
+                        <span class="player-answer">My Guess:</span>
                         <span id="bot3Answer" class="numberAnswer"></span>
                         <!-- kan vi ta bort denna nedan?? isf på flera ställen -->
                         <span class="game-answer"></span>

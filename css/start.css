@@ -11,12 +11,14 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  height: 100%;
+  min-height: 100vh;
+  width: 100%;
   color: white;
 }
 
 main {
   flex-direction: column;
+  
 }
 
 .logo {
@@ -117,4 +119,71 @@ p b {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.regAndSign-container{
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#registerDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem 1rem;
+}
+#signInDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem 1rem;
+}
+#registerAreaBtn{
+  font-size: 1.5rem;
+  text-shadow: none;
+}
+#signInAreaBtn{
+  font-size: 1.5rem;
+  text-shadow: none;
+  
+}
+#howToPlayDiv{
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.inputFields{
+  width: 15rem;
+  height: 3rem;
+  margin: 0.5rem;
+  outline: none;
+}
+
+.playBtn{
+  margin: 3rem;
+  width: 12rem;
+  padding: 1rem;
+  border-radius: 50rem;
+  border: none;
+  color: black;
+  text-decoration: none;
+  background: var(--clr-yellow);
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
+  transition: 250ms ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+
+.playBtn:hover {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
+  background: var(--clr-orange);
 }
