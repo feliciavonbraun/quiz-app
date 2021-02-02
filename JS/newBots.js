@@ -15,6 +15,12 @@ document.getElementById("playerNameFromLS").innerHTML = localStorage.getItem("cr
 
 console.log('CORRECT ANSWER IS: ' + answer);
 
+function randomizeTime() {
+  let randomTime = Math.floor(Math.random() * (10000 - 3000)) + 3000;
+  // console.log('random time is: ' + randomTime)
+  return randomTime;
+}
+
 function botOneTurn() {
   
   setTimeout(() => {
@@ -46,7 +52,7 @@ function botOneTurn() {
         userTurn();
     }
     return botOneGuess;
-  }, 2000);
+  }, 6000);
 }
 
 
@@ -160,7 +166,7 @@ function botTwoTurn() {
         botThreeTurn();
     }
 
-  }, 2000);
+  }, randomizeTime());
 
 }
 
