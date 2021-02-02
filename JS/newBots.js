@@ -19,7 +19,13 @@ function botOneTurn() {
   
   setTimeout(() => {
     let botOneGuess = Math.floor(Math.random() * (max - min)) + min;
-    console.log('Bot 1 guesses: ' + botOneGuess)
+    console.log('Bot 1 guesses: ' + botOneGuess);
+
+    userInputField.addEventListener("keyup", function(event) {
+      if (event.key === 'Enter') {
+        submitBtn.click();
+      }
+    });
   
     if(botOneGuess == answer){
         question.innerHTML = `Bot 1 is the winner`;  
