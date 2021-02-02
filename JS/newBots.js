@@ -1,6 +1,8 @@
 let answer = Math.floor(Math.random() * 20) + 1;
 const question = document.querySelector('.question');
 const submitBtn = document.querySelector('.submit');
+const userInputField = document.getElementById('inputUser');
+userInputField.disabled = true;
 let min = 1;
 let max = 20;
 let userScore = localStorage.getItem('userScore');
@@ -51,6 +53,8 @@ function botOneTurn() {
 
 
 function userTurn() {
+
+  userInputField.disabled = false;
 
   startTimer();
 
@@ -118,6 +122,8 @@ function userTurn() {
 
 
 function botTwoTurn() {
+
+  userInputField.disabled = true;
   
   setTimeout(() => {
 
