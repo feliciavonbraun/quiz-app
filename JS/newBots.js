@@ -1,14 +1,24 @@
 let answer = Math.floor(Math.random() * 20) + 1;
+
 const question = document.querySelector('.question');
 const submitBtn = document.querySelector('.submit');
 const userInputField = document.getElementById('inputUser');
+
 userInputField.disabled = true;
+
 let min = 1;
 let max = 20;
+
 let userScore = localStorage.getItem('userScore');
 let botOneScore = localStorage.getItem('botOneScore');
 let botTwoScore = localStorage.getItem('botTwoScore');
 let botThreeScore = localStorage.getItem('botThreeScore');
+
+let botOneCard = document.getElementById('bot-one-card');
+let userCard = document.getElementById('user-card');
+let botTwoCard = document.getElementById('bot-two-card');
+let botThreeCard = document.getElementById('bot-three-card');
+
 
 // Retrieves local storage username
 document.getElementById("playerNameFromLS").innerHTML = localStorage.getItem("createUsername");
@@ -21,10 +31,24 @@ function randomizeTime() {
   return randomTime;
 }
 
+// function enterTriggerToStart() {
+//   window.addEventListener("keyup", function(event) {
+//     if (event.key === 'Enter') {
+//       botOneTurn();
+//     }
+//   });
+// }
+
 function botOneTurn() {
+
+  botOneCard.style = 'opacity: 100%';
+  userCard.style = 'opacity: 50%';
+  botTwoCard.style = 'opacity: 50%';
+  botThreeCard.style = 'opacity: 50%';
   
   setTimeout(() => {
     let botOneGuess = Math.floor(Math.random() * (max - min)) + min;
+
     console.log('Bot 1 guesses: ' + botOneGuess);
   
     if(botOneGuess == answer){
@@ -42,6 +66,7 @@ function botOneTurn() {
         document.getElementById("bot1Answer").innerHTML = botOneGuess;
         console.log(`Bot 1's answer is too low`);  
         min = botOneGuess + 1;  
+        console.log('NEW RANGE IS: ' + min + '-' + max)
         userTurn();   
   
     } else {
@@ -49,6 +74,7 @@ function botOneTurn() {
         document.getElementById("bot1Answer").innerHTML = botOneGuess;
         console.log(`Sorry Bot 1! That is too high`); 
         max = botOneGuess - 1;
+        console.log('NEW RANGE IS: ' + min + '-' + max)
         userTurn();
     }
     return botOneGuess;
@@ -58,17 +84,26 @@ function botOneTurn() {
 
 
 
+
 function userTurn() {
 
+  botOneCard.style = 'opacity: 50%';
+  userCard.style = 'opacity: 100%';
+  botTwoCard.style = 'opacity: 50%';
+  botThreeCard.style = 'opacity: 50%';
+
+  console.log('====================')
+
   userInputField.disabled = false;
+  submitBtn.disabled = false;
 
   startTimer();
 
   function startTimer() {
 
     // TIMER
-    var sec = 15;
-    var timer = setInterval( () => {
+    let sec = 15;
+    let timer = setInterval( () => {
       if (sec <= 9) {
         document.getElementById('timer').innerHTML='00:0'+sec;
       } else {
@@ -91,29 +126,56 @@ function userTurn() {
 
     userInputField.addEventListener("keyup", function(event) {
       if (event.key === 'Enter') {
+        console.log('ENTER WAS CLICKED');
+        event.preventDefault();
         submitBtn.click();
+        submitBtn.disabled = true;
       }
     });
     
     submitBtn.addEventListener('click', () => {
-  
+
+      submitBtn.disabled = true;
+      console.log('ANSWER SUBMITTED')
+      
       let userGuess = parseInt(document.getElementById('inputUser').value);
+
+      if (userGuess < min || userGuess > max) {
+        console.log('EJ GODKÄND GISSNING')
+        if (userGuess < min) {
+          userGuess = min - 1;
+        }
+        if (userGuess > max && max == 20) {
+          userGuess = max;
+        } else if (userGuess > max && max != 20) {
+          userGuess = max + 1;
+        }
+      }
+
       console.log('User guesses: ' + userGuess);
-  
-      if(userGuess == answer){
+      
+      if (userGuess == answer) {
+          console.log('IN I IF-SATSEN=====');
           question.innerHTML = `User is the winner`;  
           console.log(`User is the winner`); 
+
           userScore++;
+          localStorage.setItem('userScore', userScore);
           console.log(userScore);
+
           document.getElementById("playerAnswer").innerHTML = userGuess;
           clearInterval(timer);
-          document.getElementById('timer').innerHTML="00:15"
+          document.getElementById('timer').innerHTML="00:15";
+
+          userInputField.disabled = true;
+
           //spelet stoppas, skickas till Game Over screen
     
       } else if (userGuess < answer) {
           question.innerHTML = `User's answer is too low`; 
           console.log(`User's answer is too low`);   
           min = userGuess + 1; 
+          console.log('NEW RANGE IS: ' + min + '-' + max)
           clearInterval(timer);
           document.getElementById("playerAnswer").innerHTML = userGuess;
           document.getElementById('timer').innerHTML="00:15"
@@ -124,6 +186,7 @@ function userTurn() {
           console.log(`Sorry User! That is too high`); 
           document.getElementById("playerAnswer").innerHTML = userGuess;
           max = userGuess - 1;
+          console.log('NEW RANGE IS: ' + min + '-' + max)
           clearInterval(timer);
           document.getElementById('timer').innerHTML="00:15"
           botTwoTurn();
@@ -135,11 +198,18 @@ function userTurn() {
 
 function botTwoTurn() {
 
+  botOneCard.style = 'opacity: 50%';
+  userCard.style = 'opacity: 50%';
+  botTwoCard.style = 'opacity: 100%';
+  botThreeCard.style = 'opacity: 50%';
+
   userInputField.disabled = true;
+  submitBtn.disabled = false;
   
   setTimeout(() => {
 
     let botTwoGuess = Math.floor(Math.random() * (max - min)) + min;
+
     console.log('Bot 2 guesses: ' + botTwoGuess)
   
     if(botTwoGuess == answer){
@@ -155,6 +225,7 @@ function botTwoTurn() {
         question.innerHTML = `Bot 2's answer is too low`; 
         console.log(`Bot 2's answer is too low`);   
         min = botTwoGuess + 1;  
+        console.log('NEW RANGE IS: ' + min + '-' + max)
         document.getElementById("bot2Answer").innerHTML = botTwoGuess;
         botThreeTurn();   
   
@@ -162,6 +233,7 @@ function botTwoTurn() {
         question.innerHTML = `Sorry Bot 2! That is too high`;
         console.log(`Sorry Bot 2! That is too high`); 
         max = botTwoGuess - 1;
+        console.log('NEW RANGE IS: ' + min + '-' + max)
         document.getElementById("bot2Answer").innerHTML = botTwoGuess;
         botThreeTurn();
     }
@@ -171,10 +243,16 @@ function botTwoTurn() {
 }
 
 function botThreeTurn() {
+
+  botOneCard.style = 'opacity: 50%';
+  userCard.style = 'opacity: 50%';
+  botTwoCard.style = 'opacity: 50%';
+  botThreeCard.style = 'opacity: 100%';
   
   setTimeout(() => {
 
     let botThreeGuess = Math.floor(Math.random() * (max - min)) + min;
+
     console.log('Bot 3 guesses: ' + botThreeGuess)
   
     if(botThreeGuess == answer){
@@ -190,6 +268,7 @@ function botThreeTurn() {
         question.innerHTML = `Bot 3's answer is too low`; 
         console.log(`Bot 3's answer is too low`);
         min = botThreeGuess + 1;
+        console.log('NEW RANGE IS: ' + min + '-' + max)
         document.getElementById("bot3Answer").innerHTML = botThreeGuess;   
         botOneTurn();   
   
@@ -197,6 +276,7 @@ function botThreeTurn() {
         question.innerHTML = `Sorry Bot 3! That is too high`;
         console.log(`Sorry Bot 3! That is too high`); 
         max = botThreeGuess - 1;
+        console.log('NEW RANGE IS: ' + min + '-' + max)
         document.getElementById("bot3Answer").innerHTML = botThreeGuess;
         botOneTurn();
     }
@@ -204,6 +284,7 @@ function botThreeTurn() {
   }, 2000);
 
 }
+
 
 
 
