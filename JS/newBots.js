@@ -49,16 +49,16 @@ function botOneTurn() {
     console.log('Bot 1 guesses: ' + botOneGuess);
   
     if(botOneGuess == answer){
+      question.innerHTML = `Schmickle is the winner`;  
+      botOneScore++;
+      localStorage.setItem('botOneScore', botOneScore);
+      document.getElementById("bot1Answer").innerHTML = botOneGuess;
+      console.log(botOneScore);
+      botOneStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';
+      console.log(`Bot 1 is the winner`); 
+      setTimeout(() => {
         document.location.href = '../gameOver.html';
-        question.innerHTML = `Schmickle is the winner`;  
-        botOneScore++;
-        localStorage.setItem('botOneScore', botOneScore);
-        document.getElementById("bot1Answer").innerHTML = botOneGuess;
-        console.log(botOneScore);
-        botOneStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';
-        console.log(`Bot 1 is the winner`); 
-
-        //spelet stoppas, skickas till Game Over screen
+      }, 2000);
   
     } else if (botOneGuess < answer) {
         question.innerHTML = `Schmickle's answer is too low`; 
@@ -158,20 +158,21 @@ function userTurn() {
       if(userGuess == answer){
           question.innerHTML = `You are the winner`;
           userStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';  
-          document.location.href = '../gameOver.html';
           console.log(`User is the winner`); 
-
+          
           userScore++;
           localStorage.setItem('userScore', userScore);
           console.log(userScore);
-
+          
           document.getElementById("playerAnswer").innerHTML = userGuess;
           clearInterval(timer);
           document.getElementById('timer').innerHTML="00:15";
-
+          
           userInputField.disabled = true;
-
-          //spelet stoppas, skickas till Game Over screen
+          
+          setTimeout(() => {
+            document.location.href = '../gameOver.html';
+          }, 2000);
     
       } else if (userGuess < answer) {
           question.innerHTML = `Your answer is too low`; 
@@ -219,13 +220,14 @@ function botTwoTurn() {
     if(botTwoGuess == answer){
         question.innerHTML = `T-1001 is the winner`;
         botTwoStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';    
-        document.location.href = '../gameOver.html';
         console.log(`Bot 2 is the winner`);
         botTwoScore++;
         localStorage.setItem('botTwoScore', botTwoScore);
         document.getElementById("bot2Answer").innerHTML = botTwoGuess;
         console.log(botTwoScore); 
-        //spelet stoppas, skickas till Game Over screen
+        setTimeout(() => {
+          document.location.href = '../gameOver.html';
+        }, 2000);
   
     } else if (botTwoGuess < answer) {
         question.innerHTML = `T-1001's answer is too low`;
@@ -266,13 +268,14 @@ function botThreeTurn() {
     if(botThreeGuess == answer){
         botThreeStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';  
         question.innerHTML = `Dicy Dyed die is the winner!`;  
-        document.location.href = '../gameOver.html'; 
         console.log(`Bot 3 is the winner`); 
         botThreeScore++;
         localStorage.setItem('botThreeScore', botThreeScore);
         document.getElementById("bot3Answer").innerHTML = botThreeGuess;
         console.log(botThreeScore);
-        //spelet stoppas, skickas till Game Over screen
+        setTimeout(() => {
+          document.location.href = '../gameOver.html';
+        }, 2000);
   
     } else if (botThreeGuess < answer) {
         question.innerHTML = `Dicy Dyed Die's answer is too low`;
