@@ -4,5 +4,5 @@ function main(){
   //botOneTurn();
   //characterPage();
   //signInStorage();
-  showMore();
+  // showMore();
 }
