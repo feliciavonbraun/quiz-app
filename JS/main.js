@@ -1,8 +1,8 @@
 window.addEventListener('load', main);
 
 function main(){
-  //botOneTurn();
-  //characterPage();
-  //signInStorage();
+  botOneTurn();
+  characterPage();
+  signInStorage();
   showMore();
 }
