@@ -58,8 +58,12 @@ button {
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
     transition: 250ms ease-in-out;
     cursor: pointer;
+   
 }
-  
+.dex{
+    text-decoration: none;
+    color: black;
+}
 button:hover {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
     background: var(--clr-orange);
