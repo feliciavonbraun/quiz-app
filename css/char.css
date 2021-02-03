@@ -5,10 +5,7 @@
     --clr-yellow: #FFAF4F;
     --clr-orange: #ED733F;
 }
-html {
-    height: 100%;
-    width: 100%;
-}
+
 
 body {
     background: linear-gradient(to bottom right, var(--clr-light-purple),var(--clr-purple));
@@ -17,11 +14,20 @@ body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     color: white;
+    min-height: 100vh;
+    width: 100%;
+    
 }
 
 header {
-    font-family: 'Sedgwick Ave Display', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    text-shadow: 1px 0px 4px black;
+
 }
+
 
 
 .text{
@@ -64,19 +70,31 @@ img{
     padding: 1rem;
     width: 12rem;
 }
+h3{
+    margin-bottom: 2rem;
+}
 
 .chooseOpponentButton {
-    padding: .5rem 2rem;
+    padding: 0.7rem 2.5rem;
     border-radius: 50rem;
     border: none;
     background: var(--clr-yellow);
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: bold;
     letter-spacing: 1px;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
     transition: 250ms ease-in-out;
     cursor: pointer;
     outline: none;
+    color: black;
+    text-decoration: none;
+}
+.infoText{
+    display: none;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 15rem;
+    margin: 2rem 0rem;
 }
 
 .chooseOpponentButton:hover {
@@ -89,7 +107,9 @@ img{
     justify-content: center;
 }
 .Startgamebtn{
-    margin-top: 3rem;
+    color: black;
+    text-decoration: none;
+    margin: 3rem;
     padding: 1rem 6rem;
     border-radius: 50rem;
     border: none;
@@ -115,3 +135,4 @@ img{
 .textCenter {
     text-align: center;
 }
+
