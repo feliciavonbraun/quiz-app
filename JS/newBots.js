@@ -19,7 +19,6 @@ let botOneScore = localStorage.getItem('botOneScore');
 let botTwoScore = localStorage.getItem('botTwoScore');
 let botThreeScore = localStorage.getItem('botThreeScore');
 
-
 let botOneCard = document.getElementById('bot-one-card');
 let userCard = document.getElementById('user-card');
 let botTwoCard = document.getElementById('bot-two-card');
