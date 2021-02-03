@@ -1,9 +1,11 @@
 :root {
-  --clr-dark-purple: #593267;
   --clr-light-purple: #7866EA;
   --clr-purple: #5A3383;
   --clr-yellow: #FFAF4F;
   --clr-orange: #ED733F;
+}
+body, html {
+  overflow-x: hidden;
 }
 
 body {
@@ -12,14 +14,13 @@ body {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   color: white;
 }
 
 main {
   flex-direction: column;
-  
-}
+  }
 
 .logo {
   width: 15rem;
@@ -44,38 +45,19 @@ h2 {
   text-shadow: 2px 2px 0px var(--clr-yellow);
   margin-block-end: 0;
 }
-
+#howToPlayAreaBtn {
+  cursor: pointer;
+}
 p {
   line-height: 2.5rem;
   font-size: 1.25rem;
+ 
 }
 
 p b {
   line-height: 3rem;
 }
 
-.play-btn {
-  padding: 1rem 6rem;
-  border-radius: 50rem;
-  border: none;
-  background: var(--clr-yellow);
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
-  transition: 250ms ease-in-out;
-  cursor: pointer;
-  outline: none;
-}
-
-.play-btn:hover {
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
-  background: var(--clr-orange);
-}
-.play-btn a{
-  text-decoration: none;
-  color: black;
-}
 /*#endregion */
 
 /*#region - Register and Signup */
@@ -119,6 +101,7 @@ p b {
   justify-content: center;
   align-items: center;
   text-align: center;
+
 }
 
 .regAndSign-container{
@@ -128,32 +111,22 @@ p b {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  
+  flex-wrap: wrap;
 }
 
-#registerDiv{
+#registerDiv, #signInDiv{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0rem 1rem;
 }
-#signInDiv{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0rem 1rem;
-}
-#registerAreaBtn{
+
+#registerAreaBtn, #signInAreaBtn{
   font-size: 1.5rem;
   text-shadow: none;
 }
-#signInAreaBtn{
-  font-size: 1.5rem;
-  text-shadow: none;
-  
-}
+
 #howToPlayDiv{
   font-size: 1.4rem;
   font-weight: 400;
@@ -187,3 +160,4 @@ p b {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
   background: var(--clr-orange);
 }
+
