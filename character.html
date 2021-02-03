@@ -6,6 +6,9 @@
     <title>Character Screen</title>
     <link rel="stylesheet" href="./css/char.css">
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <script defer src="./JS/main.js"></script>
+    <script defer src="./JS/character.js"></script>
+    
 </head>
 <body>
     <header class="textCenter"> 
@@ -20,9 +23,9 @@
                 <h3>Schmickle</h3>
             
                 <div class="choose-opponent-btn">
-                    <input type="submit" class="chooseOpponentButton" id="chooseOpponentBtn" value="Info">
+                    <a type="button" class="chooseOpponentButton" id="chooseOpponentBtnOne" value="Info">More Info</a>
                 </div>
-                <p class="infoText">Schmickle is known for his speed. He will always crack jokes and loves to make snow-angels.</p>
+                <p class="infoText" id="infoOne">Schmickle is known for his speed. He will always crack jokes and loves to make snow-angels.</p>
             </div>
 
             <div class="flex bot-card bot2">
@@ -31,9 +34,9 @@
                 <h3>T-1001</h3>
 
                 <div class="choose-opponent-btn">
-                    <input type="submit" class="chooseOpponentButton" id="chooseOpponentBtn" value="Info">
+                    <a type="button" class="chooseOpponentButton" id="chooseOpponentBtnTwo" >More Info</a>
                 </div>
-                <p class="infoText">T-1001 is known for her intelligence. She will always take her time and loves math-puzzles</p>
+                <p class="infoText" id="infoTwo">T-1001 is known for her intelligence. She will always take her time and loves math-puzzles</p>
             </div>
 
             <div class="flex bot-card bot3">
@@ -42,9 +45,9 @@
                 <h3>Dicy dyed die</h3>
                 
                 <div class="choose-opponent-btn">
-                    <input type="submit" class="chooseOpponentButton" id="chooseOpponentBtn" value="info">
+                    <a type="button" class="chooseOpponentButton" id="chooseOpponentBtnThree" value="Info">More Info</a>
                 </div>
-                <p class="infoText">Dicy dyed die is known for its randomness. It will always be unpredictable and loves to play yatzy.</p>
+                <p class="infoText" id="infoThree">Dicy dyed die is known for its randomness. It will always be unpredictable and loves to play yatzy.</p>
             </div>
 
         </div>
@@ -53,5 +56,7 @@
             <a href="./play.html" type="submit"class="Startgamebtn"value="Start Game" >Play</a>
         </div>
     </main>
+    
 </body>
+
 </html>
