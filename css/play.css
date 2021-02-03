@@ -32,6 +32,7 @@ body {
     background: rgba(255, 255, 255, 0.644);
     padding: 1rem;
     border-radius: 1rem;
+    width: 35rem;
 }
 
 .gameLeader p {
@@ -76,7 +77,7 @@ h2 {
 
 .player-one, .userInputArea, .player-two, .player-three {
     background: rgba(255, 255, 255, 0.644);
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
     border-radius: 0 0 1rem 1rem;
     display: flex;
     flex-direction: row;
