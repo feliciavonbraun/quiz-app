@@ -1,46 +1,30 @@
+window.addEventListener('load', signUp)
 // Starts functions
-function characterPage() {
-    defaultPage();
+function signUp() {
+    // defaultPage();
     addEventListeners();
 }
 
-function defaultPage() {
-    document.getElementById("howToPlayDiv").style.display = 'none';
-}
+// function defaultPage() {
+// //     document.getElementById("howToPlayDiv").style.display = 'none';
+// // }
 
 function addEventListeners() {
 
-    const howToPlayAreaBtn = document.getElementById('howToPlayAreaBtn').addEventListener('click', openHowToPlayArea);
+    // const howToPlayAreaBtn = document.getElementById('howToPlayAreaBtn').addEventListener('click', openHowToPlayArea);
     const registerSubmitBtn = document.getElementById('registerSubmitBtn').addEventListener('click', registerStorage);    
     const signInSubmitBtn = document.getElementById('signInSubmitBtn').addEventListener('click', signInStorage);    
 }
 
-function openHowToPlayArea() {
-    document.getElementById("howToPlayDiv").style.display = 'unset';
-
-}
-
-function openRegisterArea() {
-    document.getElementById("registerDiv").style.display = 'unset';
-    document.getElementById("howToPlayDiv").style.display = 'none';
-    document.getElementById("signInDiv").style.display = 'none';
-}
-
-function openSignInArea() {
-    document.getElementById("signInDiv").style.display = 'unset';
-    document.getElementById("howToPlayDiv").style.display = 'none';
-    document.getElementById("registerDiv").style.display = 'none';
-}
-
+// function openHowToPlayArea() {
+//     document.getElementById("howToPlayDiv").style.display = 'unset';
+// }
 
 //------------Register----------
 
 // Register user and saves in local storage
 function registerStorage() {
 
-    let users;
-    let pws;
-    
     // Gets elements from HTML
     let createUsername = document.getElementById('createUsername');
     let createPw = document.getElementById('createPw');
@@ -53,19 +37,8 @@ function registerStorage() {
         localStorage.setItem('createUsername', createUsername.value);
         localStorage.setItem('createPw', createPw.value);
         alert('acc created');
-        
-        // Hides and shows pages if registerSubmitBtn is pressed
-        document.getElementById('registerAreaBtn').style.display = 'none'; 
-        document.getElementById('registerAreaBtn').style.display = 'none'; 
-        document.getElementById('signInAreaBtn').style.display = 'none'; 
-        document.getElementById('registerDiv').style.display = 'none'; 
-        document.getElementById('signInDiv').style.display = 'none'; 
-        document.getElementById('welcomeDiv').style.display = 'unset'; 
-
-        // Retrieves
-        document.getElementById("welcomePhrase").innerHTML = localStorage.getItem("createUsername");
-    }
-   
+        document.location.href = '../character.html';
+    }  
 }
 
 //--------------Sign In---------------
@@ -79,20 +52,10 @@ function signInStorage() {
     
     if (username.value == createUsername && pw.value == createPw) {
         alert('You are logged in.');
-        
-        // Hides and shows pages if signInSubmitBtn is pressed
-        document.getElementById('registerAreaBtn').style.display = 'none'; 
-        document.getElementById('registerAreaBtn').style.display = 'none'; 
-        document.getElementById('signInAreaBtn').style.display = 'none'; 
-        document.getElementById('registerDiv').style.display = 'none'; 
-        document.getElementById('signInDiv').style.display = 'none'; 
-        document.getElementById('welcomeDiv').style.display = 'unset';  
+        document.location.href = '../character.html';
     } else {
         alert('Error on login');
     }
-    
-    // Retrieves
-    document.getElementById("welcomePhrase").innerHTML = localStorage.getItem("createUsername");
 }
 
 
