@@ -27,29 +27,60 @@ body {
     justify-content: center;
 }
 
+header {
+    top: 2rem;
+    position: fixed;
+    height: 12rem;
+}
+
 .gameLeader {
     display: flex;
     background: rgba(255, 255, 255, 0.644);
     padding: 1rem;
     border-radius: 1rem;
+    width: 36rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ 
+    
+}
+
+.leaderTalks {
+    
+    display: flex;
+    flex-direction: row;
+}
+
+.leaderTalks img {
+    height: 5rem;
+    width: auto;
 }
 
 .gameLeader p {
     background: rgba(255, 255, 255, 0.829);
-    padding: 1rem;
+    padding: .7rem;
+    margin-left: 1rem;
     border-radius: .5rem;
 }
 
 .timer-section {
     background: white;
-    padding: 1rem 2rem;
+    padding: .5rem .5rem;
     font-size: 2rem;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     border-radius: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main {
+    position: fixed;
+    top: 11rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -76,7 +107,7 @@ h2 {
 
 .player-one, .userInputArea, .player-two, .player-three {
     background: rgba(255, 255, 255, 0.644);
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
     border-radius: 0 0 1rem 1rem;
     display: flex;
     flex-direction: row;
