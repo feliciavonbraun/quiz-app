@@ -2,6 +2,7 @@ window.addEventListener('load', main);
 
 function main(){
   botOneTurn();
-  characterPage();
-  signInStorage();
+  //characterPage();
+  //signInStorage();
+  //showMore();
 }

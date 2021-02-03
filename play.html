@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/play.css">
+    <link rel="stylesheet" href="./css/play-mobile.css">
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
 
     <script defer src="./JS/main.js"></script>
@@ -19,17 +20,19 @@
 <body>
     <header>
         <div class="gameLeader">
-            <img src="assets/Img/spel-ledare.svg" alt="gameLeader" width="10%">
-            <p>Let's Play! What number do you want to guess? </p> 
+            <div class="leaderTalks">
+            <img src="assets/Img/spel-ledare.svg" alt="gameLeader">
+            <p class="question">Let's Play! What number do you want to guess? </p> 
+            </div>
+            <div class="timer-section">
+                <span id="timer">00:15</span>
+            </div>
         </div>
         <h4 class="question">
             <!-- Code injected by by JS -->
         </h4>
     </header>
 
-    <div class="timer-section">
-        <span id="timer">00:15</span>
-    </div>
     
     <!-- tror ej classen playscreen används -->
     <main class="playscreen">
@@ -39,13 +42,18 @@
             <!-- Jag tog bort class="player" vid player-one osv -->
             <!-- Ändrade namnet på class="answers" till guessArea-->
             <!-- se bot3, inget ändrat med classes eller id där -->
+<<<<<<< HEAD
             <div class="player" id="bot-one-card">
                 <h2>BOT 1</h2>
+=======
+            <div class="player">
+                <h2>Schmickle</h2>
+>>>>>>> main
                 <div class="player-one">
                     <div class="guessArea" >
                         <span class="player-answer">My Guess:</span>
                         <span id="bot1Answer" class="numberAnswer"></span>
-                        <span class="game-answer"></span>
+                        <span id="bot1status" class="game-answer"></span>
                     </div>
                     
                     <div class="character">
@@ -65,13 +73,11 @@
                     </div>
                     <div class="guessAndImageArea">
                         <div class="guessArea">
-                            <!-- se över detta om vi behöver allt? -->
                             <span class="player-answer numberAnswer">
                                 <!-- <span class="player-answer">My Guess:</span> -->
                                 <span id="playerAnswer"></span>
                             </span>
-                            <!-- behöver vi denna??? -->
-                            <span class="game-answer"></span>
+                            <span id="userStatus" class="game-answer"></span>
                         </div>
                         
                         <div class="character">
@@ -82,14 +88,18 @@
                 
             </div>
 
+<<<<<<< HEAD
             <div class="player" id="bot-two-card">
                 <h2>BOT 2</h2>
+=======
+            <div class="player">
+                <h2>T-1001</h2>
+>>>>>>> main
                 <div class="player-two">
                     <div class="guessArea">
                         <span class="player-answer">My Guess:</span>
                         <span id="bot2Answer" class="numberAnswer"></span>
-                        <!-- kan vi ta bort denna nedan?? isf på flera ställen -->
-                        <span class="game-answer"></span>
+                        <span id="bot2status" class="game-answer"></span>
                     </div>
 
                     <div class="character">
@@ -99,14 +109,18 @@
                 </div>
             </div>
 
+<<<<<<< HEAD
             <div class="player" id="bot-three-card">
                 <h2>BOT 3</h2>
+=======
+            <div class="player">
+                <h2>Dicy Dyed Die</h2>
+>>>>>>> main
                 <div class="player-three">
                     <div class="guessArea">
                         <span class="player-answer">My Guess:</span>
                         <span id="bot3Answer" class="numberAnswer"></span>
-                        <!-- kan vi ta bort denna nedan?? isf på flera ställen -->
-                        <span class="game-answer"></span>
+                        <span id="bot3status" class="game-answer"></span>
                     </div>
     
                     <div class="character">

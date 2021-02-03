@@ -29,22 +29,21 @@ main {
 }
 
 #winOrLoseText {
+    color: var(--clr-orange);
     font-size: x-large;
 }
 
-h2 {
-    background: white;
-    border-radius: 1rem 1rem 0rem 0rem;
-    margin: 0;
-    padding: 1rem;
+.highScoreArea {
+    background: rgba(255, 255, 255, 0.644);
+    border-radius: 1rem;
+    width: 13rem;    
 }
 
-ol {
-    background: rgba(255, 255, 255, 0.644);
-    border-radius: 0 0 1rem 1rem;
-    margin: 0;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+.listRows {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
+    line-height: 2rem;
 }
 
 button {
@@ -58,8 +57,12 @@ button {
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
     transition: 250ms ease-in-out;
     cursor: pointer;
+   
 }
-  
+.dex{
+    text-decoration: none;
+    color: black;
+}
 button:hover {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
     background: var(--clr-orange);
