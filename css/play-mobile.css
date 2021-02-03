@@ -4,7 +4,15 @@
         flex-direction: column-reverse;
     }
 
+    header {
+        height: 13rem;
+    }
+
     main {
         top: 14rem;
+    }
+
+    .player {
+        margin: .3rem;
     }
 }
