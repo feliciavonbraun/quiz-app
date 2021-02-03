@@ -28,6 +28,7 @@ function botOneTurn() {
     });
   
     if(botOneGuess == answer){
+        document.location.href = '../gameOver.html';
         question.innerHTML = `Schmickle is the winner`;  
         botOneScore++;
         localStorage.setItem('botOneScore', botOneScore);
@@ -95,6 +96,7 @@ function userTurn() {
       console.log('User guesses: ' + userGuess);
   
       if(userGuess == answer){
+          document.location.href = '../gameOver.html';
           question.innerHTML = `You are the winner`;  
           console.log(`User is the winner`); 
           userScore++;
@@ -137,6 +139,7 @@ function botTwoTurn() {
     console.log('Bot 2 guesses: ' + botTwoGuess)
   
     if(botTwoGuess == answer){
+        document.location.href = '../gameOver.html';
         question.innerHTML = `T-1001 is the winner`;  
         console.log(`Bot 2 is the winner`);
         botTwoScore++;
@@ -172,6 +175,8 @@ function botThreeTurn() {
     console.log('Bot 3 guesses: ' + botThreeGuess)
   
     if(botThreeGuess == answer){
+        document.location.href = '../gameOver.html';
+        document.location.href = "gameOver.html";
         question.innerHTML = `Dicy Dyed die is the winner`;  
         console.log(`Bot 3 is the winner`); 
         botThreeScore++;
