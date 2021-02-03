@@ -3,6 +3,10 @@ const question = document.querySelector('.question');
 const submitBtn = document.querySelector('.submit');
 const userInputField = document.getElementById('inputUser');
 userInputField.disabled = true;
+const botOneStatus = document.getElementById("bot1status");
+const userStatus = document.getElementById("userStatus");
+const botTwoStatus = document.getElementById("bot2status");
+const botThreeStatus = document.getElementById("bot3status");
 let min = 1;
 let max = 20;
 let userScore = localStorage.getItem('userScore');
@@ -33,6 +37,7 @@ function botOneTurn() {
         localStorage.setItem('botOneScore', botOneScore);
         document.getElementById("bot1Answer").innerHTML = botOneGuess;
         console.log(botOneScore);
+        botOneStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';
         console.log(`Bot 1 is the winner`); 
 
         //spelet stoppas, skickas till Game Over screen
@@ -40,6 +45,7 @@ function botOneTurn() {
     } else if (botOneGuess < answer) {
         question.innerHTML = `Schmickle's answer is too low`; 
         document.getElementById("bot1Answer").innerHTML = botOneGuess;
+        botOneStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too low</p>';
         console.log(`Bot 1's answer is too low`);  
         min = botOneGuess + 1;  
         userTurn();   
@@ -47,6 +53,7 @@ function botOneTurn() {
     } else {
         question.innerHTML = `Sorry Schmickle! That is too high`;
         document.getElementById("bot1Answer").innerHTML = botOneGuess;
+        botOneStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too high</p>';
         console.log(`Sorry Bot 1! That is too high`); 
         max = botOneGuess - 1;
         userTurn();
@@ -95,7 +102,8 @@ function userTurn() {
       console.log('User guesses: ' + userGuess);
   
       if(userGuess == answer){
-          question.innerHTML = `You are the winner`;  
+          question.innerHTML = `You are the winner`;
+          userStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';  
           console.log(`User is the winner`); 
           userScore++;
           console.log(userScore);
@@ -106,6 +114,7 @@ function userTurn() {
     
       } else if (userGuess < answer) {
           question.innerHTML = `Your answer is too low`; 
+          userStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too low</p>';
           console.log(`User's answer is too low`);   
           min = userGuess + 1; 
           clearInterval(timer);
@@ -115,6 +124,7 @@ function userTurn() {
     
       } else {
           question.innerHTML = `Sorry! That is too high`;
+          userStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too high</p>';
           console.log(`Sorry User! That is too high`); 
           document.getElementById("playerAnswer").innerHTML = userGuess;
           max = userGuess - 1;
@@ -137,7 +147,8 @@ function botTwoTurn() {
     console.log('Bot 2 guesses: ' + botTwoGuess)
   
     if(botTwoGuess == answer){
-        question.innerHTML = `T-1001 is the winner`;  
+        question.innerHTML = `T-1001 is the winner`;
+        botTwoStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';    
         console.log(`Bot 2 is the winner`);
         botTwoScore++;
         localStorage.setItem('botTwoScore', botTwoScore);
@@ -146,7 +157,8 @@ function botTwoTurn() {
         //spelet stoppas, skickas till Game Over screen
   
     } else if (botTwoGuess < answer) {
-        question.innerHTML = `T-1001's answer is too low`; 
+        question.innerHTML = `T-1001's answer is too low`;
+        botTwoStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too low</p>'; 
         console.log(`Bot 2's answer is too low`);   
         min = botTwoGuess + 1;  
         document.getElementById("bot2Answer").innerHTML = botTwoGuess;
@@ -154,6 +166,7 @@ function botTwoTurn() {
   
     } else {
         question.innerHTML = `Sorry T-1001! That is too high`;
+        botTwoStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too high</p>';
         console.log(`Sorry Bot 2! That is too high`); 
         max = botTwoGuess - 1;
         document.getElementById("bot2Answer").innerHTML = botTwoGuess;
@@ -172,7 +185,8 @@ function botThreeTurn() {
     console.log('Bot 3 guesses: ' + botThreeGuess)
   
     if(botThreeGuess == answer){
-        question.innerHTML = `Dicy Dyed die is the winner`;  
+        botThreeStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';  
+        question.innerHTML = `Dicy Dyed die is the winner!`;  
         console.log(`Bot 3 is the winner`); 
         botThreeScore++;
         localStorage.setItem('botThreeScore', botThreeScore);
@@ -181,7 +195,8 @@ function botThreeTurn() {
         //spelet stoppas, skickas till Game Over screen
   
     } else if (botThreeGuess < answer) {
-        question.innerHTML = `Dicy Dyed Die's answer is too low`; 
+        question.innerHTML = `Dicy Dyed Die's answer is too low`;
+        botThreeStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too low</p>'; 
         console.log(`Bot 3's answer is too low`);
         min = botThreeGuess + 1;
         document.getElementById("bot3Answer").innerHTML = botThreeGuess;   
@@ -189,6 +204,7 @@ function botThreeTurn() {
   
     } else {
         question.innerHTML = `Sorry Dicy Dyed Die! That is too high`;
+        botThreeStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too high</p>';
         console.log(`Sorry Bot 3! That is too high`); 
         max = botThreeGuess - 1;
         document.getElementById("bot3Answer").innerHTML = botThreeGuess;
