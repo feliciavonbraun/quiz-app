@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="./css/start.css">
     <script defer src="./JS/main.js"></script>
-    <script defer src="./JS/newBots.js"></script>
+    <!-- <script defer src="./JS/newBots.js"></script> -->
     <script defer src="./JS/signUp.js"></script>
 </head>
 <body>
@@ -21,37 +21,29 @@
     </header>
     <main class="flex center">
         <div class="container flex center">
-            <h2 id="howToPlayAreaBtn">How To Play</h2>
+            <h1 id="howToPlayAreaBtn">How To Play</h1>
             <p id="howToPlayDiv"> 
-                 Try to guess the right number between 1 and 20.
+                Try to guess the right number between 1 and 20.
                 If you guess the wrong number, the game leader will tell you if the correct answer is Higher or Lower. 
                 Then the turn moves on to the next player until someone guesses the correct answer.
             </p>
 
-        </div>
-
-            
+        </div>            
         <div class="regAndSign-container"> 
-             
             <div id="registerDiv">
-                <h2 id="registerAreaBtn" class="registerAreaBtn">REGISTER:</h2>
+                <h2 class="registerAreaBtn">REGISTER:</h2>
                 <input id="createUsername" class="inputFields" type="text" placeholder="Pick Username" value="" required/>
                 <input id="createPw" class="inputFields" type="password" placeholder="Pick Password" value="" required/>
                 <input id="registerSubmitBtn" class="submitBtn" type="submit" value="Register"/>  
             </div>
              
             <div id="signInDiv">
-                <h2 id="signInAreaBtn">SIGN IN:</h2>
+                <h2>SIGN IN:</h2>
                 <input id="username" class="inputFields" type="text" placeholder="Username" value="" required/>
                 <input id="pw" class="inputFields" type="password" placeholder="Password" value="" required/>
                 <input id="signInSubmitBtn" class="submitBtn" type="submit" value="Sign in"/> 
             </div>
-            
-        </div>    
-
-            
-        <a class="playBtn" href="./character.html">Play</a>
-        </div>        
+        </div>
     </main>
 
 </body>
