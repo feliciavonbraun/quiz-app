@@ -176,7 +176,6 @@ function botThreeTurn() {
   
     if(botThreeGuess == answer){
         document.location.href = '../gameOver.html';
-        document.location.href = "gameOver.html";
         question.innerHTML = `Dicy Dyed die is the winner`;  
         console.log(`Bot 3 is the winner`); 
         botThreeScore++;
