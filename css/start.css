@@ -4,6 +4,7 @@
   --clr-yellow: #FFAF4F;
   --clr-orange: #ED733F;
 }
+
 body, html {
   overflow-x: hidden;
 }
@@ -18,19 +19,45 @@ body {
   color: white;
 }
 
-main {
-  flex-direction: column;
-  }
-
 .logo {
   width: 15rem;
   margin-top: 1rem;
 }
+
+main {
+  flex-direction: column;
+}
+
 img{
   height: 7rem;  
 }
 
 /*#region - HOW TO PLAY */
+.regAndSign-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#registerDiv, #signInDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem 1rem;
+}
+  
+h1 {
+  font-size: 2.25rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px var(--clr-yellow);
+  margin-block-end: 0;
+}
+
 .container {
   margin: auto 0;
   flex-direction: column;
@@ -38,31 +65,27 @@ img{
   text-align: center;
 }
 
-h2 {
-  font-size: 2.25rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 0px var(--clr-yellow);
-  margin-block-end: 0;
-}
 #howToPlayAreaBtn {
   cursor: pointer;
 }
-p {
-  line-height: 2.5rem;
-  font-size: 1.25rem;
- 
-}
 
-p b {
-  line-height: 3rem;
+#howToPlayDiv {
+  line-height: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
 }
-
 /*#endregion */
 
 /*#region - Register and Signup */
+h2 {
+  font-size: 1.5rem;
+  text-shadow: none;
+  letter-spacing: 3px;
+  margin: 0; 
+}
+
 .inputFields {
-  width: 15%;
+  width: 15rem;
   padding: 1rem;
   margin: 1rem 0;
   font-size: 1rem;
@@ -85,6 +108,7 @@ p b {
   transition: 250ms ease-in-out;
   cursor: pointer;
   outline: none;
+  margin-bottom: 1rem;
 }
 
 .submitBtn:hover {
@@ -101,63 +125,5 @@ p b {
   justify-content: center;
   align-items: center;
   text-align: center;
-
-}
-
-.regAndSign-container{
-  width: 100%;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-#registerDiv, #signInDiv{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0rem 1rem;
-}
-
-#registerAreaBtn, #signInAreaBtn{
-  font-size: 1.5rem;
-  text-shadow: none;
-}
-
-#howToPlayDiv{
-  font-size: 1.4rem;
-  font-weight: 400;
-}
-.inputFields{
-  width: 15rem;
-  height: 3rem;
-  margin: 0.5rem;
-  outline: none;
-}
-
-.playBtn{
-  margin: 3rem;
-  width: 12rem;
-  padding: 1rem;
-  border-radius: 50rem;
-  border: none;
-  color: black;
-  text-decoration: none;
-  background: var(--clr-yellow);
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
-  transition: 250ms ease-in-out;
-  cursor: pointer;
-  outline: none;
-}
-
-.playBtn:hover {
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
-  background: var(--clr-orange);
 }
 
