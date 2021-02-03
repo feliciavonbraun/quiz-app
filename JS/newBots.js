@@ -9,7 +9,7 @@ let userScore = localStorage.getItem('userScore');
 let botOneScore = localStorage.getItem('botOneScore');
 let botTwoScore = localStorage.getItem('botTwoScore');
 let botThreeScore = localStorage.getItem('botThreeScore');
-
+let userGuess;
 // Retrieves local storage username
 document.getElementById("playerNameFromLS").innerHTML = localStorage.getItem("createUsername");
 

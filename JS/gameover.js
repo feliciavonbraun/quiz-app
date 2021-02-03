@@ -8,7 +8,7 @@ let createUsername = localStorage.getItem('createUsername');
 let answer;  // kanske kan sätta i answer i LS eller SS för att hämta det här??
 let currentPlayer = 0;
 let currentScore = 0;
-
+let userGuess;
 function gameOver() {
   displayWinOrLoseText();
   displayHighScore();
@@ -17,7 +17,7 @@ function gameOver() {
 function displayWinOrLoseText() {
   // men answer finns inte i LS??? hmmm
   // om userScore ökar 
-  if (userScore == answer) {
+  if (userGuess == answer) {
     document.getElementById("winOrLoseText").innerHTML = "YAY you win";
   } else {
     document.getElementById("winOrLoseText").innerHTML = "Buu try again";
