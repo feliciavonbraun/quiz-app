@@ -18,7 +18,7 @@ let userScore = localStorage.getItem('userScore');
 let botOneScore = localStorage.getItem('botOneScore');
 let botTwoScore = localStorage.getItem('botTwoScore');
 let botThreeScore = localStorage.getItem('botThreeScore');
-let userGuess;
+
 
 let botOneCard = document.getElementById('bot-one-card');
 let userCard = document.getElementById('user-card');
