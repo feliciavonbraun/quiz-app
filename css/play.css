@@ -6,12 +6,7 @@
     --clr-orange: #ED733F;
 }
 
-body, html {
-    /* overflow-x: hidden; */
-}
-
 body {
-   /* background: var(--clr-dark-purple);*/
     background: linear-gradient(to bottom right, var(--clr-light-purple),var(--clr-purple));
 
     min-height: 100vh;
@@ -29,7 +24,6 @@ body {
 
 header {
     top: 2rem;
-    /* position: fixed; */
     height: 12rem;
 }
 
@@ -47,9 +41,7 @@ header p {
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
- 
-    
+    justify-content: space-between;    
 }
 
 .leaderTalks {
@@ -84,19 +76,11 @@ header p {
 }
 
 main {
-    /* position: fixed; */
     top: 11rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-
-/* .playfield {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    
-} */
 
 h2 {
     font-family: 'Sedgwick Ave Display', cursive;
@@ -117,6 +101,7 @@ h2 {
     border-radius: 0 0 1rem 1rem;
     display: flex;
     flex-direction: row;
+    height: 7rem;
 }
 
 .guessAndImageArea {
@@ -134,9 +119,25 @@ h2 {
     padding: 1rem;
     width: 7rem;
     height: 4rem;
+    margin-left: .4rem;
+}
+.playerGuessArea {
+    background: white;
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 1rem;
+    width: 8rem;
+    height: 4rem;
+    margin-left: .4rem;
 }
 
 .numberAnswer {
+    font-size: xx-large;
+    margin: 0;
+}
+.numberAnswer span {
     font-size: xx-large;
     margin: 0;
 }
@@ -146,7 +147,7 @@ h2 {
 }
 
 .player-avatar {
-    height: 6rem;
+    height: 5rem;
     width: auto;
 }
 
@@ -182,61 +183,3 @@ h2 {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.75);
     background: var(--clr-orange);
 }
-
-
-/* TROR EJ DETTA ANVÄNDS */
-
-/* .character {
-    align-items: horizontal;
-} */
-
-/* .user {
-    padding-top: 3.2rem;
-} */
-
-/* .number-input{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .player-three{
-    display: flex;
-    flex-direction: row;
-} */
-
-/* .player-answer {
-    color: white
-} */
-
-/* .playfield p {
-    color:white;
-} */
-
-/* .game-answer {
-    color: yellow;
-} */
-
-/* .btnsub{
-    padding: 1rem 6rem;
-    border-radius: 50rem;
-    border: none;
-    background: var(--clr-yellow);
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.75);
-    transition: 250ms ease-in-out;
-    cursor: pointer;
-    outline: none;
-} */
-
-/* .textinfo{
-    width: 45%;
-    padding: 1.5rem 2rem;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-} */
