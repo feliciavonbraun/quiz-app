@@ -44,17 +44,6 @@ img{
     display: flex;
 }
 
-/* .bot{
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-} */
-/* .bottext{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-} */
-
 /*#region - Botarea */
 .bot-choices {
     margin: 4rem 0rem 1rem;
