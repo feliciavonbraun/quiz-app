@@ -30,14 +30,13 @@ let botThreeCard = document.getElementById('bot-three-card');
 // Retrieves local storage username
 document.getElementById("playerNameFromLS").innerHTML = localStorage.getItem("createUsername");
 
-console.log('CORRECT ANSWER IS: ' + answer);
-
+// Generates a random time for T-1001 (bow two)
 function randomizeTime() {
   let randomTime = Math.floor(Math.random() * (10000 - 3000)) + 3000;
-  // console.log('random time is: ' + randomTime)
   return randomTime;
 }
 
+//Game starts with bot one guessing
 function botOneTurn() {
 
   botOneCard.style = 'opacity: 100%';
@@ -47,17 +46,14 @@ function botOneTurn() {
   
   setTimeout(() => {
     let botOneGuess = Math.floor(Math.random() * (max - min)) + min;
-
-    console.log('Bot 1 guesses: ' + botOneGuess);
   
+    //checks if answer ic correct
     if(botOneGuess == answer){
       question.innerHTML = `Schmickle is the winner`;  
       botOneScore++;
       localStorage.setItem('botOneScore', botOneScore);
       document.getElementById("bot1Answer").innerHTML = botOneGuess;
-      console.log(botOneScore);
       botOneStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';
-      console.log(`Bot 1 is the winner`); 
       setTimeout(() => {
         document.location.href = '../gameOver.html';
       }, 2000);
@@ -66,26 +62,19 @@ function botOneTurn() {
         question.innerHTML = `Schmickle's answer is too low`; 
         document.getElementById("bot1Answer").innerHTML = botOneGuess;
         botOneStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too low</p>';
-        console.log(`Bot 1's answer is too low`);  
         min = botOneGuess + 1;  
-        console.log('NEW RANGE IS: ' + min + '-' + max)
         userTurn();   
   
     } else {
         question.innerHTML = `Sorry Schmickle! That is too high`;
         document.getElementById("bot1Answer").innerHTML = botOneGuess;
         botOneStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too high</p>';
-        console.log(`Sorry Bot 1! That is too high`); 
         max = botOneGuess - 1;
-        console.log('NEW RANGE IS: ' + min + '-' + max)
         userTurn();
     }
     return botOneGuess;
   }, 6000);
 }
-
-
-
 
 
 function userTurn() {
@@ -95,16 +84,12 @@ function userTurn() {
   botTwoCard.style = 'opacity: 50%';
   botThreeCard.style = 'opacity: 50%';
 
-  console.log('====================')
-
   userInputField.disabled = false;
   submitBtn.disabled = false;
 
   startTimer();
 
   function startTimer() {
-
-    // TIMER
     let sec = 15;
     let timer = setInterval( () => {
       if (sec <= 9) {
@@ -113,8 +98,7 @@ function userTurn() {
         document.getElementById('timer').innerHTML='00:'+sec;
       }
       sec--;
-
-      //om tiden blir mindre än noll
+      // if time gets to less than 0
       if (sec < 0) {
         clearInterval(timer);
         document.getElementById('timer').innerHTML="00:15";
@@ -123,28 +107,24 @@ function userTurn() {
   
     }, 1000);
 
-    //KOLLAR OM SVARET ÄR KORREKT, FÖR LÅGT ELLER FÖR HÖGT
-
-    console.log('USER, it is your turn')
-
+    // Enter trigger for user input
     userInputField.addEventListener("keyup", function(event) {
       if (event.key === 'Enter') {
-        console.log('ENTER WAS CLICKED');
         event.preventDefault();
         submitBtn.click();
         submitBtn.disabled = true;
       }
     });
     
+    // listener for click
     submitBtn.addEventListener('click', () => {
 
       submitBtn.disabled = true;
-      console.log('ANSWER SUBMITTED')
       
       let userGuess = parseInt(document.getElementById('inputUser').value);
 
+      // if user guesses higher than max lower than min
       if (userGuess < min || userGuess > max) {
-        console.log('EJ GODKÄND GISSNING')
         if (userGuess < min) {
           userGuess = min - 1;
         }
@@ -154,17 +134,14 @@ function userTurn() {
           userGuess = max + 1;
         }
       }
-
-      console.log('User guesses: ' + userGuess);
   
+      //checks if answer is correct
       if(userGuess == answer){
           question.innerHTML = `You are the winner`;
           userStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';  
-          console.log(`User is the winner`); 
           
           userScore++;
           localStorage.setItem('userScore', userScore);
-          console.log(userScore);
           
           document.getElementById("playerAnswer").innerHTML = userGuess;
           clearInterval(timer);
@@ -179,9 +156,7 @@ function userTurn() {
       } else if (userGuess < answer) {
           question.innerHTML = `Your answer is too low`; 
           userStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too low</p>';
-          console.log(`User's answer is too low`);   
           min = userGuess + 1; 
-          console.log('NEW RANGE IS: ' + min + '-' + max)
           clearInterval(timer);
           document.getElementById("playerAnswer").innerHTML = userGuess;
           document.getElementById('timer').innerHTML="00:15"
@@ -190,10 +165,8 @@ function userTurn() {
       } else {
           question.innerHTML = `Sorry! That is too high`;
           userStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too high</p>';
-          console.log(`Sorry User! That is too high`); 
           document.getElementById("playerAnswer").innerHTML = userGuess;
           max = userGuess - 1;
-          console.log('NEW RANGE IS: ' + min + '-' + max)
           clearInterval(timer);
           document.getElementById('timer').innerHTML="00:15"
           botTwoTurn();
@@ -216,17 +189,14 @@ function botTwoTurn() {
   setTimeout(() => {
 
     let botTwoGuess = Math.floor(Math.random() * (max - min)) + min;
-
-    console.log('Bot 2 guesses: ' + botTwoGuess)
   
+    //checks if answer is correct
     if(botTwoGuess == answer){
         question.innerHTML = `T-1001 is the winner`;
         botTwoStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';    
-        console.log(`Bot 2 is the winner`);
         botTwoScore++;
         localStorage.setItem('botTwoScore', botTwoScore);
         document.getElementById("bot2Answer").innerHTML = botTwoGuess;
-        console.log(botTwoScore); 
         setTimeout(() => {
           document.location.href = '../gameOver.html';
         }, 2000);
@@ -234,18 +204,14 @@ function botTwoTurn() {
     } else if (botTwoGuess < answer) {
         question.innerHTML = `T-1001's answer is too low`;
         botTwoStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too low</p>'; 
-        console.log(`Bot 2's answer is too low`);   
         min = botTwoGuess + 1;  
-        console.log('NEW RANGE IS: ' + min + '-' + max)
         document.getElementById("bot2Answer").innerHTML = botTwoGuess;
         botThreeTurn();   
   
     } else {
         question.innerHTML = `Sorry T-1001! That is too high`;
         botTwoStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too high</p>';
-        console.log(`Sorry Bot 2! That is too high`); 
         max = botTwoGuess - 1;
-        console.log('NEW RANGE IS: ' + min + '-' + max)
         document.getElementById("bot2Answer").innerHTML = botTwoGuess;
         botThreeTurn();
     }
@@ -264,17 +230,15 @@ function botThreeTurn() {
   setTimeout(() => {
 
     let botThreeGuess = Math.floor(Math.random() * (max - min)) + min;
-
-    console.log('Bot 3 guesses: ' + botThreeGuess)
   
+    //checks if answer is correct
     if(botThreeGuess == answer){
         botThreeStatus.innerHTML = '<p style="color:green; font-weight:bold;">Winner!</p>';  
         question.innerHTML = `Dicy Dyed die is the winner!`;  
-        console.log(`Bot 3 is the winner`); 
         botThreeScore++;
         localStorage.setItem('botThreeScore', botThreeScore);
         document.getElementById("bot3Answer").innerHTML = botThreeGuess;
-        console.log(botThreeScore);
+
         setTimeout(() => {
           document.location.href = '../gameOver.html';
         }, 2000);
@@ -282,18 +246,14 @@ function botThreeTurn() {
     } else if (botThreeGuess < answer) {
         question.innerHTML = `Dicy Dyed Die's answer is too low`;
         botThreeStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too low</p>'; 
-        console.log(`Bot 3's answer is too low`);
         min = botThreeGuess + 1;
-        console.log('NEW RANGE IS: ' + min + '-' + max)
         document.getElementById("bot3Answer").innerHTML = botThreeGuess;   
         botOneTurn();   
   
     } else {
         question.innerHTML = `Sorry Dicy Dyed Die! That is too high`;
         botThreeStatus.innerHTML = '<p style="color:red; font-weight:bold;">Too high</p>';
-        console.log(`Sorry Bot 3! That is too high`); 
         max = botThreeGuess - 1;
-        console.log('NEW RANGE IS: ' + min + '-' + max)
         document.getElementById("bot3Answer").innerHTML = botThreeGuess;
         botOneTurn();
     }
