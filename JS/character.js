@@ -1,5 +1,6 @@
 window.addEventListener('load', showMore);
 
+//Buttons for more info
 function showMore(){
 
     const infoBtn1 = document.getElementById('chooseOpponentBtnOne');
@@ -11,6 +12,7 @@ function showMore(){
     infoBtn3.addEventListener('click', readMore3);
 }
 
+//Displays info text when clicked
 function readMore1(){
 
     const infoText1 = document.getElementById('infoOne');

@@ -5,25 +5,15 @@ let botOneScore = localStorage.getItem('botOneScore');
 let botTwoScore = localStorage.getItem('botTwoScore');
 let botThreeScore = localStorage.getItem('botThreeScore');
 let createUsername = localStorage.getItem('createUsername');
-// let answer;  // kanske kan sätta i answer i LS eller SS för att hämta det här??
 let currentPlayer = 0;
 let currentScore = 0;
-// let userGuess;
+
 
 function gameOver() {
-  // displayWinOrLoseText();
+ 
   displayHighScore();
 }
 
-// function displayWinOrLoseText() {
-//   // men answer finns inte i LS??? hmmm
-//   // om userScore ökar 
-//   if (userGuess === answer) {
-//     document.getElementById("winOrLoseText").innerHTML = "YAY you win";
-//   } else {
-//     document.getElementById("winOrLoseText").innerHTML = "Buu try again";
-//   }
-// }
 
 function displayHighScore() {
   const highScoreArray = [ 
