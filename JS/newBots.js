@@ -1,3 +1,5 @@
+window.addEventListener('load', botOneTurn);
+
 let answer = Math.floor(Math.random() * 20) + 1;
 
 const question = document.querySelector('.question');

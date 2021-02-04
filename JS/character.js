@@ -1,3 +1,5 @@
+window.addEventListener('load', showMore);
+
 function showMore(){
 
     const infoBtn1 = document.getElementById('chooseOpponentBtnOne');
